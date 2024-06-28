@@ -12,6 +12,15 @@ public class Team {
     List <Partido> listPartido;
     public Team() {
     }
+
+    
+    public Team(String id, String nombre, String ciudad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ciudad = ciudad;
+    }
+
+
     public String getId() {
         return id;
     }

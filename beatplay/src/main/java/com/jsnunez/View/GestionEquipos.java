@@ -8,7 +8,8 @@ public class GestionEquipos {
         System.out.println("    1. Agregar nuevo equipo.");
         System.out.println("    2. Editar un equipo.");
         System.out.println("    3. Eliminar un equipo.");
-        System.out.println("    4. Salir.");
+        System.out.println("    4. Listar equipos.");        
+        System.out.println("    5. Salir.");
 
         int opcion = sc.nextInt();
 
@@ -18,12 +19,15 @@ public class GestionEquipos {
                 System.out.println("    CREACION DE UN NUEVO EQUIPO");
                 break;
             case 2:
-                System.out.println("    ELIMINAR UN EQUIPO");
+                System.out.println("   EDITAR UN EQUIPO");
                 break;
             case 3:
-                System.out.println("    EDITAR UN EQUIPO");
+                System.out.println("    ELIMINAR  UN EQUIPO");
                 break;
             case 4:
+                System.out.println("    LISTAR EQUIPOS");
+                break;
+            case 5:
 
                 System.out.println(
                         "   ______    _______  _______  ______    _______  _______  _______  __    _  ______   _______ ");

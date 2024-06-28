@@ -17,5 +17,9 @@ public static void start() {
     Usuario usuario = new Usuario("001", "admin", "jsnunez@gmail.com", "123", rol);
 
     controlador.usuarios.put("001", usuario);
+
+Team equipo=new Team("001", "Bucaramanga", "Bucaramanga");
+controlador.equipos.put("001",equipo);
+
 }
 }
