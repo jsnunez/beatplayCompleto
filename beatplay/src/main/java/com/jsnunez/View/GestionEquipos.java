@@ -8,7 +8,7 @@ public class GestionEquipos {
         System.out.println("    1. Agregar nuevo equipo.");
         System.out.println("    2. Editar un equipo.");
         System.out.println("    3. Eliminar un equipo.");
-        System.out.println("    4. Listar equipos.");        
+        System.out.println("    4. Listar equipos.");
         System.out.println("    5. Salir.");
 
         int opcion = sc.nextInt();

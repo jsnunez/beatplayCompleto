@@ -15,10 +15,10 @@ public class Main {
     EliminarEquipo.controlador = controlador;
     ListarEquipos.controlador = controlador;
     EditarEquipo.controlador = controlador;
-    CrearPartido.controlador =controlador;
-    EditarPartido.controlador=controlador;
+    CrearPartido.controlador = controlador;
+    EditarPartido.controlador = controlador;
 
-com.jsnunez.model.DatosInicio.start();
+    com.jsnunez.model.DatosInicio.start();
     Permiso permiso = new Permiso("001", "Editar");
     Rol rol = new Rol("001", "Administrador", permiso);
     Usuario usuario = new Usuario("001", "", "jsnunez@gmail.com", "", rol);
@@ -68,7 +68,7 @@ com.jsnunez.model.DatosInicio.start();
                     ListarEquipos le = new ListarEquipos();
                     le.start(sc);
                     break;
-                    case 5:
+                  case 5:
 
                     break;
                   default:
@@ -78,13 +78,37 @@ com.jsnunez.model.DatosInicio.start();
 
               case 2:
                 GestionJugadores gj = new GestionJugadores();
-                gj.start(sc);
+                int opcionJugadores = gj.start(sc);
+
+                switch (opcionJugadores) {
+                  case 1:
+                    CrearJugadores cj = new CrearJugadores();
+                    cj.start(sc);
+                    break;
+
+                  case 2:
+                    EditarJugadores ej = new EditarJugadores();
+                    ej.start(sc);
+                    break;
+
+                  case 3:
+                    EliminarJugadores elj = new EliminarJugadores();
+                    elj.start(sc);
+
+                  case 4:
+                    ListarJugadores lj = new ListarJugadores();
+                    lj.start(sc);
+                    break;
+
+                  default:
+                    throw new AssertionError();
+
+                }
                 break;
 
               case 3:
                 GestionPartidos gp = new GestionPartidos();
-                int opcionPartidos=  gp.start(sc);
-               
+                int opcionPartidos = gp.start(sc);
 
                 switch (opcionPartidos) {
                   case 1:
@@ -105,20 +129,19 @@ com.jsnunez.model.DatosInicio.start();
                     ListarEquipos le = new ListarEquipos();
                     le.start(sc);
                     break;
-                    case 5:
+                  case 5:
 
                     break;
                   default:
                     throw new AssertionError();
                 }
-              break;
+                break;
               default:
                 System.out.println("Opcion no valida");
                 break;
             }
 
             caso = c.start(tipoUsuario, sc);
-        
 
           } while (caso != 5);
         }

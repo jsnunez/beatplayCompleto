@@ -14,13 +14,14 @@ public class CrearJugadores {
 
         System.out.println("Ingresa el ID del jugador");
         String id = sc.nextLine();
-        if (controlador.jugadores.containsKey(id)) {
-            System.out.println("El código del Jugador ya existe. Por favor, intente con otro código.");
-        } else {
+        // if (controlador.jugadores.containsKey(id)) {
+        //     System.out.println("El código del Jugador ya existe. Por favor, intente con otro código.");
+        // } else 
+        {
             System.out.println("Ingrese el nombre del Jugador");
             String nombre = sc.nextLine();
-            System.out.println("Apellido");
-            String apellido = sc.nextLine();
+            // System.out.println("Apellido");
+            // String apellido = sc.nextLine();
             System.out.println("Edad:");
             int edad = sc.nextInt();
             System.out.println("Posicion.");
