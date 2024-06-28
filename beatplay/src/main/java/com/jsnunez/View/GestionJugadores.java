@@ -2,27 +2,34 @@ package com.jsnunez.View;
 
 import java.util.Scanner;
 
-public class GestionEquipos {
+public class GestionJugadores {
+
     public static int start(Scanner sc) {
-        System.out.println("       MODULO DE EQUIPOS     ");
-        System.out.println("    1. Agregar nuevo equipo.");
-        System.out.println("    2. Editar un equipo.");
-        System.out.println("    3. Eliminar un equipo.");
+        System.out.println("       ¡MODULO DE JUGADORES!     ");
+        System.out.println("    1. Agregar nuevo jugador.");
+        System.out.println("    2. Editar un jugador.");
+        System.out.println("    3. Eliminar un jugador.");
         System.out.println("    4. Salir.");
 
         int opcion = sc.nextInt();
 
-        sc.nextLine(); // Consumir el salto de línea
+        sc.nextLine();
         switch (opcion) {
             case 1:
-                System.out.println("    CREACION DE UN NUEVO EQUIPO");
+                System.out.println("    ¡CREACION DE UN NUEVO JUGADOR!");
+
                 break;
+
             case 2:
-                System.out.println("    ELIMINAR UN EQUIPO");
+                System.out.println("   EDITAR JUGADOR");
+
                 break;
+
             case 3:
-                System.out.println("    EDITAR UN EQUIPO");
+                System.out.println("    ELIMINAR JUGADOR");
+
                 break;
+
             case 4:
 
                 System.out.println(
@@ -46,5 +53,6 @@ public class GestionEquipos {
                 break;
         }
         return opcion;
+
     }
 }
