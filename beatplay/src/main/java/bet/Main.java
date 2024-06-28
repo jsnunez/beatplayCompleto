@@ -3,6 +3,8 @@ package bet;
 import java.util.Scanner;
 import com.jsnunez.View.*;
 import com.jsnunez.model.*;
+import com.jsnunez.model.Partidos.CrearPartido;
+import com.jsnunez.model.Partidos.EditarPartido;
 
 public class Main {
   public static void main(String[] args) {
@@ -13,7 +15,10 @@ public class Main {
     EliminarEquipo.controlador = controlador;
     ListarEquipos.controlador = controlador;
     EditarEquipo.controlador = controlador;
+    CrearPartido.controlador =controlador;
+    EditarPartido.controlador=controlador;
 
+com.jsnunez.model.DatosInicio.start();
     Permiso permiso = new Permiso("001", "Editar");
     Rol rol = new Rol("001", "Administrador", permiso);
     Usuario usuario = new Usuario("001", "", "jsnunez@gmail.com", "", rol);
@@ -52,19 +57,19 @@ public class Main {
 
                   case 2:
                     EditarEquipo ede = new EditarEquipo();
-
                     ede.start(sc);
                     break;
                   case 3:
                     EliminarEquipo ee = new EliminarEquipo();
-
                     ee.start(sc);
                     break;
 
                   case 4:
                     ListarEquipos le = new ListarEquipos();
-
                     le.start(sc);
+                    break;
+                    case 5:
+
                     break;
                   default:
                     throw new AssertionError();
@@ -78,14 +83,42 @@ public class Main {
 
               case 3:
                 GestionPartidos gp = new GestionPartidos();
-                gp.start(sc);
+                int opcionPartidos=  gp.start(sc);
+               
 
+                switch (opcionPartidos) {
+                  case 1:
+                    CrearPartido cp = new CrearPartido();
+                    cp.start(sc);
+                    break;
+
+                  case 2:
+                    EditarPartido edp = new EditarPartido();
+                    edp.start(sc);
+                    break;
+                  case 3:
+                    EliminarEquipo ee = new EliminarEquipo();
+                    ee.start(sc);
+                    break;
+
+                  case 4:
+                    ListarEquipos le = new ListarEquipos();
+                    le.start(sc);
+                    break;
+                    case 5:
+
+                    break;
+                  default:
+                    throw new AssertionError();
+                }
+              break;
               default:
                 System.out.println("Opcion no valida");
                 break;
             }
 
-            System.out.println(caso);
+            caso = c.start(tipoUsuario, sc);
+        
 
           } while (caso != 5);
         }
@@ -101,5 +134,10 @@ public class Main {
 
       }
     }
+  }
+
+  private static DatosInicio DatosInicio() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'DatosInicio'");
   }
 }

@@ -7,6 +7,12 @@ public class estadio {
     int capacidad;
     public estadio() {
     }
+    public estadio(String id, String nombre, String ubicacion, int capacidad) {
+        this.id = id;
+        this.nombre = nombre;
+        this.ubicacion = ubicacion;
+        this.capacidad = capacidad;
+    }
     public String getId() {
         return id;
     }
