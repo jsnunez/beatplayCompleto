@@ -16,8 +16,12 @@ public static void start(Scanner sc) {
 
                     while (teamKeys.hasMoreElements()) {
                         String teamKey = teamKeys.nextElement();
-                        System.out.println("Key: " + teamKey + " Nombre del equipo: " +
-                                controlador.equipos.get(teamKey).getNombre());
+                        System.out.println("Key: " + teamKey + " Nombre del equipo equipo visitante es: " +
+                                controlador.Partidos.get(teamKey).getEquipoLocal().getNombre());
+                                System.out.println("Key: " + teamKey + " Nombre del equipo equipo local es: " +
+                                controlador.Partidos.get(teamKey).getEquipoVisitante().getNombre());
+                                System.out.println("Key: " + teamKey + " Estadio donde se va jugar el partido: " +
+                                controlador.Partidos.get(teamKey).getEquipoVisitante().getNombre());
                     }
         System.out.println("Ingrese id del partido a editar");
         String id = sc.nextLine();
