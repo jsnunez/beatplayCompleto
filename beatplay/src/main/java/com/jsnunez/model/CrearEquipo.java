@@ -16,15 +16,15 @@ public class CrearEquipo {
         if (controlador.equipos.containsKey(id)) {
             System.out.println("El código del equipo ya existe. Por favor, intente con otro código.");
         } else {
-        System.out.println("Ingrese nombre del equipo");
-        String nombre = sc.nextLine();
-        System.out.println("Ingresa la Ciudad.");
-        String ciudad = sc.nextLine();
+            System.out.println("Ingrese nombre del equipo");
+            String nombre = sc.nextLine();
+            System.out.println("Ingresa la Ciudad.");
+            String ciudad = sc.nextLine();
 
-        equipo.setId(id);
-        equipo.setNombre(nombre);
-        equipo.setCiudad(ciudad);
-        controlador.equipos.put(id, equipo);
+            equipo.setId(id);
+            equipo.setNombre(nombre);
+            equipo.setCiudad(ciudad);
+            controlador.equipos.put(id, equipo);
         }
     }
 }
