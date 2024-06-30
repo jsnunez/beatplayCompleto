@@ -5,19 +5,21 @@ public class Personas {
     private String nombre;
     private String apellido;
     private int edad;
+    private String nacionalidad;
     public Personas() {
     }
-    public Personas(String id, String nombre, String apellido, int edad) {
+    public Personas(String id, String nombre, String apellido, int edad, String nacionalidad) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
+        this.nacionalidad = nacionalidad;
     }
     public String getId() {
         return id;
     }
-    public String setId(String id) {
-        return this.id = id;
+    public void setId(String id) {
+        this.id = id;
     }
     public String getNombre() {
         return nombre;
@@ -37,6 +39,11 @@ public class Personas {
     public void setEdad(int edad) {
         this.edad = edad;
     }
-
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
     
 }

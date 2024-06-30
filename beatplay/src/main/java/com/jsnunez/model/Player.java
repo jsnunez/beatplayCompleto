@@ -1,50 +1,44 @@
 package com.jsnunez.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
-String id;
-String nombre;
-int edad;
+public class Player extends Personas{
+
 String Posicion;
-String nacionalidad;
+
 int numeroCamisetas;
 Team equipo;
 List <Lesion> listLesiones;
 List <rendimiento> listRendimiento;
 public Player() {
+    
+    listLesiones = new ArrayList<Lesion>();    
+    listRendimiento = new ArrayList<rendimiento>();
 
-
 }
-public String getId() {
-    return id;
+public Player(String posicion, int numeroCamisetas, Team equipo, List<Lesion> listLesiones,
+        List<rendimiento> listRendimiento) {
+    Posicion = posicion;
+    this.numeroCamisetas = numeroCamisetas;
+    this.equipo = equipo;
+    this.listLesiones = listLesiones;
+    this.listRendimiento = listRendimiento;
 }
-public void setId(String id) {
-    this.id = id;
-}
-public String getNombre() {
-    return nombre;
-}
-public void setNombre(String nombre) {
-    this.nombre = nombre;
-}
-public int getEdad() {
-    return edad;
-}
-public void setEdad(int edad) {
-    this.edad = edad;
+public Player(String id, String nombre, String apellido, int edad, String nacionalidad, String posicion,
+        int numeroCamisetas, Team equipo, List<Lesion> listLesiones, List<rendimiento> listRendimiento) {
+    super(id, nombre, apellido, edad, nacionalidad);
+    Posicion = posicion;
+    this.numeroCamisetas = numeroCamisetas;
+    this.equipo = equipo;
+    this.listLesiones = listLesiones;
+    this.listRendimiento = listRendimiento;
 }
 public String getPosicion() {
     return Posicion;
 }
 public void setPosicion(String posicion) {
     Posicion = posicion;
-}
-public String getNacionalidad() {
-    return nacionalidad;
-}
-public void setNacionalidad(String nacionalidad) {
-    this.nacionalidad = nacionalidad;
 }
 public int getNumeroCamisetas() {
     return numeroCamisetas;
@@ -70,5 +64,6 @@ public List<rendimiento> getListRendimiento() {
 public void setListRendimiento(rendimiento rendimiento) {
     this.listRendimiento.add(rendimiento);
 }
+
 
 }

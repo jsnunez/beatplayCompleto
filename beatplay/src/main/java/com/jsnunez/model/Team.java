@@ -1,5 +1,6 @@
 package com.jsnunez.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
@@ -11,6 +12,7 @@ public class Team {
     List <Player> listJugadores;
     List <Partido> listPartido;
     public Team() {
+        listJugadores = new ArrayList<Player>();
     }
 
     
@@ -18,6 +20,9 @@ public class Team {
         this.id = id;
         this.nombre = nombre;
         this.ciudad = ciudad;
+        
+        listJugadores = new ArrayList<Player>();
+        
     }
 
 
@@ -61,7 +66,7 @@ public class Team {
         return listPartido;
     }
     public void setListPartido(Partido partido) {
-        this.listPartido.add(partido);;
+        this.listPartido.add(partido);
     }
 
     

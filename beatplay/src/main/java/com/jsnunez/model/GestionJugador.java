@@ -14,9 +14,9 @@ public static Controller controlador;
 
         System.out.println("Ingresa el ID del jugador");
         String id = sc.nextLine();
-        // if (controlador.jugadores.containsKey(id)) {
-        //     System.out.println("El código del Jugador ya existe. Por favor, intente con otro código.");
-        // } else 
+        if (controlador.jugadores.containsKey(id)) {
+            System.out.println("El código del Jugador ya existe. Por favor, intente con otro código.");
+        } else 
         {
             System.out.println("Ingrese el nombre del Jugador");
             String nombre = sc.nextLine();
@@ -24,12 +24,14 @@ public static Controller controlador;
             // String apellido = sc.nextLine();
             System.out.println("Edad:");
             int edad = sc.nextInt();
+            sc.nextLine();
             System.out.println("Posicion.");
             String posicion = sc.nextLine();
             System.out.println("Nacionalidad");
             String nacionalidad = sc.nextLine();
             System.out.println("Numero de camiseta");
             int numeroCamisetas = sc.nextInt();
+            sc.nextLine();
             System.out.println("Seleccione Equipo");
                 Enumeration<String> teamKeys = controlador.equipos.keys();
 
@@ -41,6 +43,7 @@ public static Controller controlador;
                     String equipoSeleccionar = sc.nextLine();
 Team equipo = new Team();
 equipo=controlador.equipos.get(equipoSeleccionar);
+System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
             jugador.setId(id);
             jugador.setNombre(nombre);
             jugador.setEdad(edad);

@@ -13,6 +13,9 @@ public class Main {
     GestionPartido.controlador = controlador;
     GestionEquipo.controlador = controlador;
     GestionJugador.controlador = controlador;
+    GestionPartido.controlador = controlador;
+    GestionResultado.controlador =controlador;
+    VerificarInicioSeccion.controlador = controlador;
 
     com.jsnunez.model.DatosInicio.start();
     Permiso permiso = new Permiso("001", "Editar");
@@ -33,109 +36,141 @@ public class Main {
 
           usuarioSesion = is.start(sc);
           VerificarInicioSeccion vs = new VerificarInicioSeccion();
-          tipoUsuario = vs.start(usuarioSesion, usuario);
+          tipoUsuario = vs.start(usuarioSesion);
+          if (tipoUsuario != null){
           Actor a = new Actor();
           a.start();
-
+          System.out.println("oprima enter para continuar");
+          sc.nextLine();
+          
           Casos c = new Casos();
           caso = c.start(tipoUsuario, sc);
+       if (tipoUsuario == "administrador"){
           do {
             switch (caso) {
               case 1:
                 ViewGestionEquipos ge = new ViewGestionEquipos();
                 GestionEquipo gune = new GestionEquipo();
-                int opcionEquipos; 
-do{
- opcionEquipos= ge.start(sc);
-                switch (opcionEquipos) {
-                  
-                  case 1:
-                    gune.CrearEquipo(sc);
-                    break;
+                int opcionEquipos;
+                do {
+                  opcionEquipos = ge.start(sc);
+                  switch (opcionEquipos) {
 
-                  case 2:
-                    gune.EditarEquipo(sc);
-                    break;
-                  case 3:
-                    gune.EliminarEquipo(sc);
-                    break;
+                    case 1:
+                      gune.CrearEquipo(sc);
+                      break;
 
-                  case 4:
-                    gune.ListarEquipos(sc);
-                    break;
+                    case 2:
+                      gune.EditarEquipo(sc);
+                      break;
+                    case 3:
+                      gune.EliminarEquipo(sc);
+                      break;
+
+                    case 4:
+                      gune.ListarEquipos(sc);
+                      break;
                     case 5:
-                 
-                    break;
-                  default:
-                    throw new AssertionError();
-                
-                  }
-                  
 
-              } while (opcionEquipos != 5);
-                
-              break;
+                      break;
+                    default:
+                      throw new AssertionError();
+
+                  }
+
+                } while (opcionEquipos != 5);
+
+                break;
               case 2:
 
-
                 ViewGestionJugadores gj = new ViewGestionJugadores();
-               
+
                 GestionJugador gunj = new GestionJugador();
                 int opcionJugadores;
-do{
-  opcionJugadores = gj.start(sc);
-                switch (opcionJugadores) {
-                  case 1:
-                    gunj.CrearJugador(sc);
-                    break;
+                do {
+                  opcionJugadores = gj.start(sc);
+                  switch (opcionJugadores) {
+                    case 1:
+                      gunj.CrearJugador(sc);
+                      break;
 
-                  case 2:
-                    gunj.EditarJugador(sc);
-                    break;
+                    case 2:
+                      gunj.EditarJugador(sc);
+                      break;
 
-                  case 3:
-                    gunj.EliminarJugador(sc);
+                    case 3:
+                      gunj.EliminarJugador(sc);
 
-                  case 4:
-                    gunj.ListarJugadores(sc);
-                    break;
+                    case 4:
+                      gunj.ListarJugadores(sc);
+                      break;
                     case 5:
-                    break;
-                  default:
-                    throw new AssertionError();
+                      break;
+                    default:
+                      throw new AssertionError();
 
-                }}
-                while (opcionJugadores !=5) ;
+                  }
+                } while (opcionJugadores != 5);
                 break;
 
               case 3:
                 ViewGestionPartidos gp = new ViewGestionPartidos();
-                int opcionPartidos ;
+                int opcionPartidos;
                 GestionPartido gunp = new GestionPartido();
 
-                do{
+                do {
                   opcionPartidos = gp.start(sc);
-                switch (opcionPartidos) {
-                  case 1:
-                    gunp.CrearPartido(sc);
-                    break;
+                  switch (opcionPartidos) {
+                    case 1:
+                      gunp.CrearPartido(sc);
+                      break;
 
-                  case 2:
-                    gunp.EditarPartido(sc);
-                    break;
-                  case 3:
+                    case 2:
+                      gunp.EditarPartido(sc);
+                      break;
+                    case 3:
+                      gunp.EliminarPartido(sc);
+                      break;
 
-                    break;
+                    case 4:
+                      gunp.ListarPartidos(sc);
+                      break;
+                    case 5:
 
-                  case 4:
+                      break;
+                    default:
+                      throw new AssertionError();
+                  }
+                } while (opcionPartidos != 5);
+                break;
+              case 4:
+                ViewGestionResultado vgr = new ViewGestionResultado();
+                int opcionResultado;
+                GestionResultado gr = new GestionResultado();
 
-                    break;
-              
-                  default:
-                    throw new AssertionError();
-                  }}
-                  while (opcionPartidos !=4) ;
-                  break;
+                do {
+                  opcionResultado = vgr.start(sc);
+                  switch (opcionResultado) {
+                    case 1:
+                      gr.CrearResultado(sc);
+                      break;
+
+                    case 2:
+                      gr.EditarResultado(sc);
+                      break;
+                    case 3:
+                  gr.EliminarResultado(sc);
+                      break;
+
+                    case 4:
+
+                      break;
+
+                    default:
+                      throw new AssertionError();
+                  }
+                } while (opcionResultado != 4);
+                break;
 
               default:
                 System.out.println("Opcion no valida");
@@ -146,7 +181,7 @@ do{
 
           } while (caso != 5);
         }
-
+      }
         if (tipoSeccion == 2) {
           System.exit(0);
           // CrearUsuario cu = new CrearUsuario();
@@ -157,11 +192,12 @@ do{
         // Salir del bucle si se llega a un caso de finalización
 
       }
-    }
+    }}
   }
 
   private static DatosInicio DatosInicio() {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'DatosInicio'");
   }
+  
 }

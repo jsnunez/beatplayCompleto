@@ -31,15 +31,16 @@ public class Casos {
                     "16. Gestión de Usuarios y Roles",
                     "17. Gestión de Patrocinadores y Publicidad",
                     "18. Gestión de Relaciones Públicas"
+                    
             };
 
             for (String item : items) {
                 System.out.println(item);
             }
-
+            
         }
-        casoUsar = sc.nextInt();
-        return casoUsar;
+      
+        return casoUsar = sc.nextInt();
 
     }
 }

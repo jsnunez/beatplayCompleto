@@ -1,5 +1,6 @@
 package com.jsnunez.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Partido {
@@ -10,13 +11,32 @@ public class Partido {
     String hora;
     estadio estadio;
     List<Gol> goles;
-    List<Tarjeta> tarjetas;
-    List<Incidente> incidentes;
+    List<Tarjeta> lstTarjetas;
+    List<Incidente> lstIncidentes;
     Resultado resultado;
     public Partido() {
+
+        lstTarjetas = new ArrayList<Tarjeta>();    
+        lstIncidentes = new ArrayList<Incidente>();
+
     }
     public String getId() {
         return id;
+    }
+
+    
+    public Partido(String id, Team equipoLocal, Team equipoVisitante, String fecha, String hora,
+            com.jsnunez.model.estadio estadio) {
+        this.id = id;
+        this.equipoLocal = equipoLocal;
+        this.equipoVisitante = equipoVisitante;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.estadio = estadio;
+        
+        lstTarjetas = new ArrayList<Tarjeta>();    
+        lstIncidentes = new ArrayList<Incidente>();
+
     }
     public void setId(String id) {
         this.id = id;
@@ -58,16 +78,16 @@ public class Partido {
         this.goles = goles;
     }
     public List<Tarjeta> getTarjetas() {
-        return tarjetas;
+        return lstTarjetas;
     }
-    public void setTarjetas(List<Tarjeta> tarjetas) {
-        this.tarjetas = tarjetas;
+    public void setTarjetas(Tarjeta tarjetas) {
+        this.lstTarjetas.add(tarjetas);
     }
     public List<Incidente> getIncidentes() {
-        return incidentes;
+        return lstIncidentes;
     }
-    public void setIncidentes(List<Incidente> incidentes) {
-        this.incidentes = incidentes;
+    public void setIncidentes(Incidente incidentes) {
+        this.lstIncidentes.add(incidentes);
     }
     public Resultado getResultado() {
         return resultado;

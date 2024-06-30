@@ -30,8 +30,12 @@ public class ViewGestionJugadores {
                                 System.out.println("    ELIMINAR JUGADOR");
 
                                 break;
-
                         case 4:
+                                System.out.println("    LISTAR JUGADOR");
+
+                                break;
+
+                        case 5:
 
                                 System.out.println(
                                                 "   ______    _______  _______  ______    _______  _______  _______  __    _  ______   _______ ");
