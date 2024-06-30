@@ -2,7 +2,7 @@ package com.jsnunez.View;
 
 import java.util.Scanner;
 
-public class GestionEquipos {
+public class ViewGestionEquipos {
     public static int start(Scanner sc) {
         System.out.println("       MODULO DE EQUIPOS     ");
         System.out.println("    1. Agregar nuevo equipo.");

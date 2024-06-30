@@ -3,20 +3,16 @@ package bet;
 import java.util.Scanner;
 import com.jsnunez.View.*;
 import com.jsnunez.model.*;
-import com.jsnunez.model.Partidos.CrearPartido;
-import com.jsnunez.model.Partidos.EditarPartido;
 
 public class Main {
   public static void main(String[] args) {
 
     Controller controlador = new Controller();
     DatosInicio.controlador = controlador;
-    CrearEquipo.controlador = controlador;
-    EliminarEquipo.controlador = controlador;
-    ListarEquipos.controlador = controlador;
-    EditarEquipo.controlador = controlador;
-    CrearPartido.controlador = controlador;
-    EditarPartido.controlador = controlador;
+
+    GestionPartido.controlador = controlador;
+    GestionEquipo.controlador = controlador;
+    GestionJugador.controlador = controlador;
 
     com.jsnunez.model.DatosInicio.start();
     Permiso permiso = new Permiso("001", "Editar");
@@ -46,96 +42,101 @@ public class Main {
           do {
             switch (caso) {
               case 1:
-                GestionEquipos ge = new GestionEquipos();
-                int opcionEquipos = ge.start(sc);
-
+                ViewGestionEquipos ge = new ViewGestionEquipos();
+                GestionEquipo gune = new GestionEquipo();
+                int opcionEquipos; 
+do{
+ opcionEquipos= ge.start(sc);
                 switch (opcionEquipos) {
+                  
                   case 1:
-                    CrearEquipo ce = new CrearEquipo();
-                    ce.start(sc);
+                    gune.CrearEquipo(sc);
                     break;
 
                   case 2:
-                    EditarEquipo ede = new EditarEquipo();
-                    ede.start(sc);
+                    gune.EditarEquipo(sc);
                     break;
                   case 3:
-                    EliminarEquipo ee = new EliminarEquipo();
-                    ee.start(sc);
+                    gune.EliminarEquipo(sc);
                     break;
 
                   case 4:
-                    ListarEquipos le = new ListarEquipos();
-                    le.start(sc);
+                    gune.ListarEquipos(sc);
                     break;
-                  case 5:
-
+                    case 5:
+                 
                     break;
                   default:
                     throw new AssertionError();
-                }
-                break;
+                
+                  }
+                  
 
+              } while (opcionEquipos != 5);
+                
+              break;
               case 2:
-                GestionJugadores gj = new GestionJugadores();
-                int opcionJugadores = gj.start(sc);
 
+
+                ViewGestionJugadores gj = new ViewGestionJugadores();
+               
+                GestionJugador gunj = new GestionJugador();
+                int opcionJugadores;
+do{
+  opcionJugadores = gj.start(sc);
                 switch (opcionJugadores) {
                   case 1:
-                    CrearJugadores cj = new CrearJugadores();
-                    cj.start(sc);
+                    gunj.CrearJugador(sc);
                     break;
 
                   case 2:
-                    EditarJugadores ej = new EditarJugadores();
-                    ej.start(sc);
+                    gunj.EditarJugador(sc);
                     break;
 
                   case 3:
-                    EliminarJugadores elj = new EliminarJugadores();
-                    elj.start(sc);
+                    gunj.EliminarJugador(sc);
 
                   case 4:
-                    ListarJugadores lj = new ListarJugadores();
-                    lj.start(sc);
+                    gunj.ListarJugadores(sc);
                     break;
-
+                    case 5:
+                    break;
                   default:
                     throw new AssertionError();
 
-                }
+                }}
+                while (opcionJugadores !=5) ;
                 break;
 
               case 3:
-                GestionPartidos gp = new GestionPartidos();
-                int opcionPartidos = gp.start(sc);
+                ViewGestionPartidos gp = new ViewGestionPartidos();
+                int opcionPartidos ;
+                GestionPartido gunp = new GestionPartido();
 
+                do{
+                  opcionPartidos = gp.start(sc);
                 switch (opcionPartidos) {
                   case 1:
-                    CrearPartido cp = new CrearPartido();
-                    cp.start(sc);
+                    gunp.CrearPartido(sc);
                     break;
 
                   case 2:
-                    EditarPartido edp = new EditarPartido();
-                    edp.start(sc);
+                    gunp.EditarPartido(sc);
                     break;
                   case 3:
-                    EliminarEquipo ee = new EliminarEquipo();
-                    ee.start(sc);
+
                     break;
 
                   case 4:
-                    ListarEquipos le = new ListarEquipos();
-                    le.start(sc);
-                    break;
-                  case 5:
 
                     break;
+              
                   default:
                     throw new AssertionError();
-                }
-                break;
+                  }}
+                  while (opcionPartidos !=4) ;
+                  break;
+
               default:
                 System.out.println("Opcion no valida");
                 break;

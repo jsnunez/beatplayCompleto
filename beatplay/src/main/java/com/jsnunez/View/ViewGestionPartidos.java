@@ -2,7 +2,7 @@ package com.jsnunez.View;
 
 import java.util.Scanner;
 
-public class GestionPartidos {
+public class ViewGestionPartidos {
 
     public static int start(Scanner sc) {
         System.out.println("       ¡MODULO DE PARTIDOS!     ");

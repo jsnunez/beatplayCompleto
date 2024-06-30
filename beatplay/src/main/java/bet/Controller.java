@@ -30,7 +30,7 @@ public class Controller {
     public Hashtable<String, Gol> goles = new Hashtable<>();
     public Hashtable<String, Incidente> incidentes = new Hashtable<>();
     public Hashtable<String, Lesion> leisones = new Hashtable<>();
-    public Hashtable<String, Partido> Partidos = new Hashtable<>();
+    public Hashtable<String, Partido> partidos = new Hashtable<>();
     public Hashtable<String, Patrocinador> patrocinadores = new Hashtable<>();
     public Hashtable<String, Permiso> permisos = new Hashtable<>();
     public Hashtable<String, Resultado> Resultados = new Hashtable<>();

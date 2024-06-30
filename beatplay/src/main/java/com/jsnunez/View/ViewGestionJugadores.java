@@ -2,7 +2,7 @@ package com.jsnunez.View;
 
 import java.util.Scanner;
 
-public class GestionJugadores {
+public class ViewGestionJugadores {
 
         public static int start(Scanner sc) {
                 System.out.println("       ¡MODULO DE JUGADORES!     ");
