@@ -24,7 +24,8 @@ public class DatosInicio {
 
         Rol rol5 = new Rol("006", "Médico del Equipo", permiso);
         controlador.roles.put("006", rol5);
-
+        Usuario usuario11 = new Usuario("001", "", "jsnunez@gmail.com", "", rol);
+        controlador.usuarios.put("011", usuario11);
         Usuario usuario = new Usuario("002", "joan", "jsnunez94@gmail.com", "123456", rol);
         controlador.usuarios.put("002", usuario);
         Usuario usuario1 = new Usuario("003", "ana", "ana@example.com", "password123", rol1);
@@ -41,37 +42,7 @@ public class DatosInicio {
 
         Usuario usuario5 = new Usuario("007", "elena", "elena@example.com", "password345", rol5);
         controlador.usuarios.put("007", usuario5);
-        Team equipo = new Team("001", "Bucaramanga", "Bucaramanga");
-
-        controlador.equipos.put("001", equipo);
-
-        Team equipo2 = new Team("002", "Nacional", "Medellin");
-
-        controlador.equipos.put("002", equipo2);
-
-        Team equipo3 = new Team("003", "Millonarios", "Bogota");
-        controlador.equipos.put("003", equipo3);
-
-        Team equipo4 = new Team("004", "America", "Cali");
-        controlador.equipos.put("004", equipo4);
-
-        Team equipo5 = new Team("005", "Once Caldas", "Manizales");
-        controlador.equipos.put("005", equipo5);
-
-        Team equipo6 = new Team("006", "Deportivo Cali", "Cali");
-        controlador.equipos.put("006", equipo6);
-
-        Team equipo7 = new Team("007", "Santa Fe", "Bogota");
-        controlador.equipos.put("007", equipo7);
-
-        Team equipo8 = new Team("008", "Tolima", "Ibague");
-        controlador.equipos.put("008", equipo8);
-
-        Team equipo9 = new Team("009", "Pasto", "Pasto");
-        controlador.equipos.put("009", equipo9);
-
-        Team equipo10 = new Team("010", "Envigado", "Envigado");
-        controlador.equipos.put("010", equipo10);
+       
 
         estadio estadio = new estadio("001", "el campin", "Bogota", 1000000);
         controlador.estadios.put("001", estadio);
@@ -89,6 +60,40 @@ public class DatosInicio {
 
         estadio estadio5 = new estadio("006", "Palmaseca", "Palmira", 45000);
         controlador.estadios.put("006", estadio5);
+
+        Team equipo = new Team("001", "Bucaramanga", "Bucaramanga",estadio);
+
+        controlador.equipos.put("001", equipo);
+
+        Team equipo2 = new Team("002", "Nacional", "Medellin",estadio5);
+
+        controlador.equipos.put("002", equipo2);
+
+        Team equipo3 = new Team("003", "Millonarios", "Bogota",estadio);
+        controlador.equipos.put("003", equipo3);
+
+        Team equipo4 = new Team("004", "America", "Cali",estadio1);
+        controlador.equipos.put("004", equipo4);
+
+        Team equipo5 = new Team("005", "Once Caldas", "Manizales",estadio3);
+        controlador.equipos.put("005", equipo5);
+
+        Team equipo6 = new Team("006", "Deportivo Cali", "Cali",estadio2);
+        controlador.equipos.put("006", equipo6);
+
+        Team equipo7 = new Team("007", "Santa Fe", "Bogota",estadio4);
+        controlador.equipos.put("007", equipo7);
+
+        Team equipo8 = new Team("008", "Tolima", "Ibague",estadio3);
+        controlador.equipos.put("008", equipo8);
+
+        Team equipo9 = new Team("009", "Pasto", "Pasto",estadio4);
+        controlador.equipos.put("009", equipo9);
+
+        Team equipo10 = new Team("010", "Envigado", "Envigado",estadio5);
+        controlador.equipos.put("010", equipo10);
+
+       
 
         Partido partido = new Partido("001", equipo2, equipo10, "12/06/24", "11:00am", estadio);
         controlador.partidos.put("001", partido);

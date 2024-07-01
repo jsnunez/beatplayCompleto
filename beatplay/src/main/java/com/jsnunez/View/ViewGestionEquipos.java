@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class ViewGestionEquipos {
     public static int start(Scanner sc) {
-        System.out.println("       MODULO DE EQUIPOS     ");
+        
+        System.out.println("       MODULO DE GESTION DE EQUIPOS     ");
         System.out.println("    1. Agregar nuevo equipo.");
         System.out.println("    2. Editar un equipo.");
         System.out.println("    3. Eliminar un equipo.");

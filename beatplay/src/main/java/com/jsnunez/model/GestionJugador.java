@@ -68,9 +68,20 @@ System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
                     controlador.jugadores.get(playerKeye).getNombre());
 
         }
+
+
         Player jugadores = new Player();
         System.out.println("Ingrese el ID del jugador a editar.");
         String id =sc.nextLine();
+        while (!controlador.jugadores.containsKey(id) | id=="salir") {
+            System.out.println("Opcion no valida seleccione un jugador existente para continuar o escriba salir");
+            id = sc.nextLine();
+            if (id.equals("salir")) {
+                break;
+            }
+        }
+        if (id.equals("salir")) {
+        }else{
         System.out.println("Ingrese el nombre del Jugador");
         String nombre =sc.nextLine();
         System.out.println("Edad");
@@ -90,7 +101,7 @@ System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
         jugadores.setNacionalidad(nacionalidad);
         jugadores.setNumeroCamisetas(numeroCamisetas);
         controlador.jugadores.put(id, jugadores);
-        
+}
     }
     public static void EliminarJugador(Scanner sc){
         System.out.println("Ingrese el codigo del Jugador a ELIMINAR: ");

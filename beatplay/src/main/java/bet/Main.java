@@ -16,11 +16,10 @@ public class Main {
     GestionPartido.controlador = controlador;
     GestionResultado.controlador =controlador;
     VerificarInicioSeccion.controlador = controlador;
+    GestionNoticias.controlador =controlador;
 
     com.jsnunez.model.DatosInicio.start();
-    Permiso permiso = new Permiso("001", "Editar");
-    Rol rol = new Rol("001", "Administrador", permiso);
-    Usuario usuario = new Usuario("001", "", "jsnunez@gmail.com", "", rol);
+  
     UsuarioInicioSesion usuarioSesion = null;
     String tipoUsuario = null;
     int caso;
@@ -45,7 +44,7 @@ public class Main {
           
           Casos c = new Casos();
           caso = c.start(tipoUsuario, sc);
-       if (tipoUsuario == "administrador"){
+       if (tipoUsuario == "Administrador"){
           do {
             switch (caso) {
               case 1:
@@ -74,10 +73,10 @@ public class Main {
 
                       break;
                     default:
-                      throw new AssertionError();
-
+                    System.out.println("seleccione una opcion valida");
                   }
-
+                  System.out.println("presione enter para continuar");
+                  sc.nextLine();
                 } while (opcionEquipos != 5);
 
                 break;
@@ -139,8 +138,7 @@ public class Main {
 
                       break;
                     default:
-                      throw new AssertionError();
-                  }
+                    System.out.println("seleccione una opcion valida");                  }
                 } while (opcionPartidos != 5);
                 break;
               case 4:
@@ -159,7 +157,7 @@ public class Main {
                       gr.EditarResultado(sc);
                       break;
                     case 3:
-                  gr.EliminarResultado(sc);
+                    gr.ListarResultado();
                       break;
 
                     case 4:
@@ -167,11 +165,45 @@ public class Main {
                       break;
 
                     default:
-                      throw new AssertionError();
+                    System.out.println("seleccione una opcion valida");
                   }
                 } while (opcionResultado != 4);
                 break;
+                case 5:
+                ViewGestionNoticias vgn = new ViewGestionNoticias();
+                int opcionNoticias;
+                GestionNoticias gn = new GestionNoticias();
 
+                do {
+                  opcionResultado = vgn.start(sc);
+                  switch (opcionResultado) {
+                    case 1:
+                      gn.CrearNoticia(sc);
+                      break;
+
+                    case 2:
+                      gn.VerNoticia();
+                      break;
+                    case 3:
+                    gn.PublicarNoticia(sc);
+                      break;
+
+                    case 4:
+                    gn.EditarNoticia(sc);
+
+                      break;
+                      case 5:
+                      gn.EliminarNoticia(sc);
+  
+                        break;
+                        case 6:
+    
+                          break;
+                    default:
+                      System.out.println("seleccione una opcion valida");
+                  }
+                } while (opcionResultado != 6);
+                break;
               default:
                 System.out.println("Opcion no valida");
                 break;

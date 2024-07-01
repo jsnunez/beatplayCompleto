@@ -7,9 +7,8 @@ public class ViewGestionResultado {
         System.out.println("       MODULO DE RESULTADOS     ");
         System.out.println("    1. Agregar nuevo resultado.");
         System.out.println("    2. Editar un resultado.");
-        System.out.println("    3. Eliminar un resultado.");
-        System.out.println("    4. Listar resultado.");
-        System.out.println("    5. Salir.");
+        System.out.println("    3. Listar resultado.");
+        System.out.println("    4. Salir.");
 
         int opcion = sc.nextInt();
 
@@ -22,12 +21,9 @@ public class ViewGestionResultado {
                 System.out.println("   EDITAR UN RESULTADO");
                 break;
             case 3:
-                System.out.println("    ELIMINAR  UN RESULTADO");
-                break;
-            case 4:
                 System.out.println("    LISTAR RESULTADOS");
                 break;
-            case 5:
+            case 4:
 
                 System.out.println(
                         "   ______    _______  _______  ______    _______  _______  _______  __    _  ______   _______ ");
