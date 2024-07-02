@@ -94,7 +94,7 @@ public class DatosInicio {
         controlador.equipos.put("010", equipo10);
 
        
-
+fgf;
         Partido partido = new Partido("001", equipo2, equipo10, "12/06/24", "11:00am", estadio);
         controlador.partidos.put("001", partido);
         Partido partido1 = new Partido("002", equipo3, equipo4, "13/06/24", "2:00pm", estadio1);
