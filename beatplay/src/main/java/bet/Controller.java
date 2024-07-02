@@ -1,8 +1,11 @@
 package bet;
 
 import java.util.Hashtable;
+
+import com.jsnunez.model.Arbitro;
 import com.jsnunez.model.Comunicacion;
 import com.jsnunez.model.Entrada;
+import com.jsnunez.model.Entrenadores;
 import com.jsnunez.model.Entrenamiento;
 import com.jsnunez.model.Gol;
 import com.jsnunez.model.Incidente;
@@ -40,5 +43,8 @@ public class Controller {
     public Hashtable<String, estadio> estadios = new Hashtable<>();
     public Hashtable<String, rendimiento> rendimientos = new Hashtable<>();
  
+    public Hashtable<String, Entrenadores> entrenadores = new Hashtable<>();
+    
+    public Hashtable<String, Arbitro> arbitros = new Hashtable<>();
 
 }

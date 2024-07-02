@@ -6,7 +6,7 @@ import java.util.Scanner;
 import bet.Controller;
 
 public class GestionJugador {
-public static Controller controlador;
+    public static Controller controlador;
 
     public static void CrearJugador(Scanner sc) {
 
@@ -16,8 +16,7 @@ public static Controller controlador;
         String id = sc.nextLine();
         if (controlador.jugadores.containsKey(id)) {
             System.out.println("El código del Jugador ya existe. Por favor, intente con otro código.");
-        } else 
-        {
+        } else {
             System.out.println("Ingrese el nombre del Jugador");
             String nombre = sc.nextLine();
             // System.out.println("Apellido");
@@ -33,17 +32,17 @@ public static Controller controlador;
             int numeroCamisetas = sc.nextInt();
             sc.nextLine();
             System.out.println("Seleccione Equipo");
-                Enumeration<String> teamKeys = controlador.equipos.keys();
+            Enumeration<String> teamKeys = controlador.equipos.keys();
 
-                    while (teamKeys.hasMoreElements()) {
-                        String teamKey = teamKeys.nextElement();
-                        System.out.println("Key: " + teamKey + " Nombre del equipo: " +
-                                controlador.equipos.get(teamKey).getNombre());
-                    }
-                    String equipoSeleccionar = sc.nextLine();
-Team equipo = new Team();
-equipo=controlador.equipos.get(equipoSeleccionar);
-System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
+            while (teamKeys.hasMoreElements()) {
+                String teamKey = teamKeys.nextElement();
+                System.out.println("Key: " + teamKey + " Nombre del equipo: " +
+                        controlador.equipos.get(teamKey).getNombre());
+            }
+            String equipoSeleccionar = sc.nextLine();
+            Team equipo = new Team();
+            equipo = controlador.equipos.get(equipoSeleccionar);
+            System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
             jugador.setId(id);
             jugador.setNombre(nombre);
             jugador.setEdad(edad);
@@ -54,8 +53,7 @@ System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
             controlador.jugadores.put(id, jugador);
             equipo.setListJugadores(jugador);
             controlador.equipos.put(equipoSeleccionar, equipo);
-            
-            
+
         }
 
     }
@@ -69,11 +67,10 @@ System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
 
         }
 
-
         Player jugadores = new Player();
         System.out.println("Ingrese el ID del jugador a editar.");
-        String id =sc.nextLine();
-        while (!controlador.jugadores.containsKey(id) | id=="salir") {
+        String id = sc.nextLine();
+        while (!controlador.jugadores.containsKey(id) | id == "salir") {
             System.out.println("Opcion no valida seleccione un jugador existente para continuar o escriba salir");
             id = sc.nextLine();
             if (id.equals("salir")) {
@@ -81,46 +78,47 @@ System.out.println(controlador.equipos.get(equipoSeleccionar).getNombre());
             }
         }
         if (id.equals("salir")) {
-        }else{
-        System.out.println("Ingrese el nombre del Jugador");
-        String nombre =sc.nextLine();
-        System.out.println("Edad");
-        int edad =sc.nextInt();
-        System.out.println("Nueva Posicion");
-        String posicion =sc.nextLine();
-        System.out.println("Nacionalidad.");
-        String nacionalidad =sc.nextLine();
-        System.out.println("Numero de camiseta");
-        int numeroCamisetas =sc.nextInt();
-        
+        } else {
+            System.out.println("Ingrese el nombre del Jugador");
+            String nombre = sc.nextLine();
+            System.out.println("Edad");
+            int edad = sc.nextInt();
+            System.out.println("Nueva Posicion");
+            String posicion = sc.nextLine();
+            System.out.println("Nacionalidad.");
+            String nacionalidad = sc.nextLine();
+            System.out.println("Numero de camiseta");
+            int numeroCamisetas = sc.nextInt();
 
-        jugadores.setId(id);
-        jugadores.setNombre(nombre);
-        jugadores.setEdad(edad);
-        jugadores.setPosicion(posicion);
-        jugadores.setNacionalidad(nacionalidad);
-        jugadores.setNumeroCamisetas(numeroCamisetas);
-        controlador.jugadores.put(id, jugadores);
-}
+            jugadores.setId(id);
+            jugadores.setNombre(nombre);
+            jugadores.setEdad(edad);
+            jugadores.setPosicion(posicion);
+            jugadores.setNacionalidad(nacionalidad);
+            jugadores.setNumeroCamisetas(numeroCamisetas);
+            controlador.jugadores.put(id, jugadores);
+        }
     }
-    public static void EliminarJugador(Scanner sc){
+
+    public static void EliminarJugador(Scanner sc) {
         System.out.println("Ingrese el codigo del Jugador a ELIMINAR: ");
-        String codigoJ1 =sc.nextLine();
+        String codigoJ1 = sc.nextLine();
         Player je = controlador.jugadores.remove(codigoJ1);
         if (je != null) {
-            System.out.println(je.getNombre()+" ah sido ELIMINADO correctamente.");
-        } else{
+            System.out.println(je.getNombre() + " ah sido ELIMINADO correctamente.");
+        } else {
             System.out.println("Jugador no encontrado");
         }
     }
+
     public void ListarJugadores(Scanner sc) {
 
         Enumeration<String> playerKeys = controlador.jugadores.keys();
 
         while (playerKeys.hasMoreElements()) {
             String playerKey = playerKeys.nextElement();
-            System.out.println("Key: "+ playerKey + " Nombre del jugador: "+
-                        controlador.jugadores.get(playerKey).getNombre());
+            System.out.println("Key: " + playerKey + " Nombre del jugador: " +
+                    controlador.jugadores.get(playerKey).getNombre());
         }
 
     }

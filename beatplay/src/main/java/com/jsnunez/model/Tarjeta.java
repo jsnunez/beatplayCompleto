@@ -8,6 +8,13 @@ public class Tarjeta {
     String minuto;
     public Tarjeta() {
     }
+    public Tarjeta(String id, Player jugador, Partido partido, String tipo, String minuto) {
+        this.id = id;
+        this.jugador = jugador;
+        this.partido = partido;
+        this.tipo = tipo;
+        this.minuto = minuto;
+    }
     public String getId() {
         return id;
     }

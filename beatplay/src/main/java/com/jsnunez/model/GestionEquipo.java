@@ -9,6 +9,7 @@ public class GestionEquipo {
     public static Controller controlador;
 
     public static void CrearEquipo(Scanner sc) {
+        
 
         Team equipo = new Team();
 

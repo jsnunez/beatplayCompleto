@@ -8,6 +8,15 @@ public class Gol {
     Partido partido;
     public Gol() {
     }
+    
+    public Gol(String id, Player jugador, Team equipo, String minuto, Partido partido) {
+        this.id = id;
+        this.jugador = jugador;
+        this.equipo = equipo;
+        this.minuto = minuto;
+        this.partido = partido;
+    }
+
     public String getId() {
         return id;
     }

@@ -13,20 +13,10 @@ public class GestionResultado {
 
         Resultado resultado = new Resultado();
 
-
-       
         System.out.println(" Ingrese ID del resultado");
         String id = sc.nextLine();
-        
-        Enumeration<String> playerKeys = controlador.partidos.keys();
-        while (playerKeys.hasMoreElements()) {
-            String playerKey = playerKeys.nextElement();
-            System.out.println("Key: " + playerKey +
-                    " Equipo local: " + controlador.partidos.get(playerKey).getEquipoLocal().getNombre() +
-                    " Equipo visitante: " + controlador.partidos.get(playerKey).getEquipoVisitante().getNombre() +
-                    " Fecha: " + controlador.partidos.get(playerKey).getFecha() +
-                    " Estadio: " + controlador.partidos.get(playerKey).getEstadio().getNombre());
-        }
+
+        GestionPartido.ListarPartidos();
 
         System.out.println("Selecione el ID del partido ");
         String idpartido = sc.nextLine();
@@ -43,22 +33,71 @@ public class GestionResultado {
         System.out.println("Ingrese goles del equipo local");
         int golesEquipoLocal = sc.nextInt();
         sc.nextLine();
-        // for (int i = 0; i < golesEquipoLocal; i++) {
-        // System.out.println(" Ingrese ID del gol");
-        // String idGol = sc.nextLine();
-        // System.out.println(" Ingrese ID del jugador");
-        // String idjugador = sc.nextLine();
+        int goles = 0;
+        while (golesEquipoLocal > goles) {
+            goles++;
+            System.out.println("Ingrese id del gol");
+            String idGol = sc.nextLine();
+            Team equipolocal = partidosel.getEquipoLocal();
+            System.out.println(equipolocal);
+            for (Player n : equipolocal.getListJugadores()) {
 
-        // }
-        System.out.println("Ingrese goles del equipo local");
+                System.out.println("ID" + n.getId() + "Nombre: " + n.getNombre());
+
+            }
+            System.out.println("Seleccione Id del jugador");
+            String idjugador = sc.nextLine();
+            Gol gol = new Gol(idpartido, null, equipolocal, idjugador, partidosel);
+            controlador.goles.put(idGol, gol);
+        }
+
+        System.out.println("Ingrese goles del equipo visitante");
         int golesEquipoVisitante = sc.nextInt();
         sc.nextLine();
+        while (golesEquipoVisitante > goles) {
+            goles++;
+            System.out.println("Ingrese id del gol");
+            String idGol = sc.nextLine();
+            Team equipolocal = partidosel.getEquipoLocal();
+            System.out.println(equipolocal);
+            for (Player n : equipolocal.getListJugadores()) {
+
+                System.out.println("ID" + n.getId() + "Nombre: " + n.getNombre());
+
+            }
+            System.out.println("Seleccione Id del jugador");
+            String idjugador = sc.nextLine();
+            Gol gol = new Gol(idpartido, null, equipolocal, idjugador, partidosel);
+            controlador.goles.put(idGol, gol);
+        }
+
+        
+        System.out.println("Ingrese # tarjetas");
+        int numtarjetas = sc.nextInt();
+        sc.nextLine();
+       int contarjetas=0;
+        while (numtarjetas > contarjetas) {
+            contarjetas++;
+            System.out.println("Ingrese id del tarjeta");
+            String idTarjeta = sc.nextLine();
+            System.out.println("Ingrese id del jugador");
+            String idJugador = sc.nextLine();
+          
+            System.out.println("Tipo");
+            String tipo = sc.nextLine();
+            System.out.println("Minuto");
+            String minuto = sc.nextLine();
+           Tarjeta tarjeta = new Tarjeta(idpartido, controlador.jugadores.get(idJugador), partidosel, tipo, minuto);
+            controlador.tarjetas.put(idTarjeta, tarjeta);
+        }
 
         resultado.setId(idpartido);
         resultado.setGolesEquipoLocal(golesEquipoLocal);
         resultado.setGolesEquipoVisitante(golesEquipoVisitante);
         resultado.setPartido(partidosel);
         controlador.Resultados.put(id, resultado);
+    
+    
     }
 
     public static void EditarResultado(Scanner sc) {
@@ -75,8 +114,7 @@ public class GestionResultado {
         String id = sc.nextLine();
         if (controlador.Resultados.containsKey(id)) {
             resultado = controlador.Resultados.get(id);
-      
-           
+
             System.out.println("Ingrese goles del equipo local");
             int golesEquipoLocal = sc.nextInt();
             sc.nextLine();
@@ -85,22 +123,19 @@ public class GestionResultado {
             // String idGol = sc.nextLine();
             // System.out.println(" Ingrese ID del jugador");
             // String idjugador = sc.nextLine();
-    
+
             // }
             System.out.println("Ingrese goles del equipo local");
             int golesEquipoVisitante = sc.nextInt();
             sc.nextLine();
-    
-           
+
             resultado.setGolesEquipoLocal(golesEquipoLocal);
             resultado.setGolesEquipoVisitante(golesEquipoVisitante);
-        
+
             controlador.Resultados.put(id, resultado);
         }
-        
-        }
-      
-  
+
+    }
 
     public static void ListarResultado() {
 
@@ -111,7 +146,7 @@ public class GestionResultado {
                     + controlador.Resultados.get(playerKey).getGolesEquipoLocal() +
                     " Goles equipo visitante " + controlador.Resultados.get(playerKey).getGolesEquipoVisitante());
         }
-       
+
     }
 
 }

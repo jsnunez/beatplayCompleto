@@ -104,7 +104,7 @@ public class GestionPartido {
         }
     }
 
-    public void ListarPartidos(Scanner sc) {
+    public static void ListarPartidos() {
 
         Enumeration<String> playerKeys = controlador.partidos.keys();
 
