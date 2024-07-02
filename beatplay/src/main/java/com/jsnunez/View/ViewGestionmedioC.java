@@ -17,21 +17,21 @@ public class ViewGestionmedioC {
             sc.nextLine();
             switch (opcion) {
                     case 1:
-                            System.out.println("    ¡CREACION DE UN NUEVO ARBITRO!");
+                            System.out.println("    ¡CREACION DE UN NUEVO MEDIO DE COMUNICACIÓN.!");
 
                             break;
 
                     case 2:
-                            System.out.println("   EDITAR ARBITRO");
+                            System.out.println("   EDITAR MEDIO DE COMUNICACIÓN.");
 
                             break;
 
                     case 3:
-                            System.out.println("    ELIMINAR ARBITRO");
+                            System.out.println("    ELIMINAR MEDIO DE COMUNICACIÓN.");
 
                             break;
                     case 4:
-                            System.out.println("    LISTAR ARBITRO");
+                            System.out.println("    LISTAR MEDIO DE COMUNICACIÓN.");
 
                             break;
 
