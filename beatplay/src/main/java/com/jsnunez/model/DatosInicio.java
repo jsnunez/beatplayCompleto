@@ -28,19 +28,19 @@ public class DatosInicio {
         controlador.usuarios.put("011", usuario11);
         Usuario usuario = new Usuario("002", "joan", "jsnunez94@gmail.com", "123456", rol);
         controlador.usuarios.put("002", usuario);
-        Usuario usuario1 = new Usuario("003", "ana", "ana@example.com", "password123", rol1);
+        Usuario usuario1 = new Usuario("003", "ana", "ana@example.com", "123", rol1);
         controlador.usuarios.put("003", usuario1);
 
-        Usuario usuario2 = new Usuario("004", "luis", "luis@example.com", "password456", rol2);
+        Usuario usuario2 = new Usuario("004", "luis", "luis@example.com", "123", rol2);
         controlador.usuarios.put("004", usuario2);
 
-        Usuario usuario3 = new Usuario("005", "maria", "maria@example.com", "password789", rol3);
+        Usuario usuario3 = new Usuario("005", "maria", "maria@example.com", "123", rol3);
         controlador.usuarios.put("005", usuario3);
 
-        Usuario usuario4 = new Usuario("006", "carlos", "carlos@example.com", "password012", rol4);
+        Usuario usuario4 = new Usuario("006", "carlos", "carlos@example.com", "123", rol4);
         controlador.usuarios.put("006", usuario4);
 
-        Usuario usuario5 = new Usuario("007", "elena", "elena@example.com", "password345", rol5);
+        Usuario usuario5 = new Usuario("007", "elena", "elena@example.com", "123", rol5);
         controlador.usuarios.put("007", usuario5);
        
 
@@ -111,5 +111,9 @@ public class DatosInicio {
 
         Partido partido5 = new Partido("006", equipo2, equipo3, "17/06/24", "10:00am", estadio5);
         controlador.partidos.put("006", partido5);
+
+
+        Player jugador1 = new Player("001", "brandon", "camargo", 30, "colombiano", "medio", 10, equipo10, null, null);
+    controlador.jugadores.put("001",jugador1);    
     }
 }

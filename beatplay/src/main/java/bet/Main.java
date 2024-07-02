@@ -16,15 +16,13 @@ public class Main {
     GestionPartido.controlador = controlador;
     GestionResultado.controlador = controlador;
     VerificarInicioSeccion.controlador = controlador;
-
     GestionNoticias.controlador = controlador;
     GestionEntrenadores.controlador = controlador;
-    
     GEstionEstadio.controlador = controlador;
-
     GestionPatrocineo.controlador = controlador;
     GestionArbitro.controlador = controlador;
     Gestionincidente.controlador = controlador;
+    
     com.jsnunez.model.DatosInicio.start();
 
     UsuarioInicioSesion usuarioSesion = null;
@@ -51,6 +49,7 @@ public class Main {
 
             Casos c = new Casos();
             caso = c.start(tipoUsuario, sc);
+          
             if (tipoUsuario == "Administrador") {
               do {
                 switch (caso) {
@@ -308,62 +307,60 @@ public class Main {
                     break;
 
                   case 9:
-                  ViewPatrocinios vPatrocinios = new ViewPatrocinios();
-                  GestionPatrocineo gPatrocineo = new GestionPatrocineo();
-                  int opcionPatrocineo;
-                  do {
-                    opcionPatrocineo = vPatrocinios.start(sc);
-                    switch (opcionPatrocineo) {
-                      case 1:
-                      gPatrocineo.CrearPatrocinador(sc);
-                      break;
+                    ViewPatrocinios vPatrocinios = new ViewPatrocinios();
+                    GestionPatrocineo gPatrocineo = new GestionPatrocineo();
+                    int opcionPatrocineo;
+                    do {
+                      opcionPatrocineo = vPatrocinios.start(sc);
+                      switch (opcionPatrocineo) {
+                        case 1:
+                          gPatrocineo.CrearPatrocinador(sc);
+                          break;
 
-                    case 2:
-                      gPatrocineo.EditarPatrocinador(sc);
-                      break;
+                        case 2:
+                          gPatrocineo.EditarPatrocinador(sc);
+                          break;
 
-                    case 3:
-                      gPatrocineo.EliminarPatrocinador(sc);
+                        case 3:
+                          gPatrocineo.EliminarPatrocinador(sc);
 
-                    case 4:
-                      gPatrocineo.ListarPatrocinador();
-                      break;
-                      case 5:
-                        break;
-                      default:
-                        System.out.println("seleccione una opcion valida");
+                        case 4:
+                          gPatrocineo.ListarPatrocinador();
+                          break;
+                        case 5:
+                          break;
+                        default:
+                          System.out.println("seleccione una opcion valida");
 
-                    }
-                  } while (opcionPatrocineo != 5);
+                      }
+                    } while (opcionPatrocineo != 5);
 
-                  break;
-                  
+                    break;
 
                   case 10:
                     break;
 
                   case 11:
-                  System.out.println("1. Crear incidente");
-                  System.out.println("2.. Listar incidente");
-                  System.out.println("3.. Salir");
-                  int opcionIncidente =sc.nextInt();
-                  sc.nextLine();
-switch (opcionIncidente) {
-  case 1:
-  Gestionincidente.CrearIncidente(sc);
-  System.out.println("enter para continuar");
-  sc.nextLine();
-    break;
-    case 2:
-    Gestionincidente.ListarIncidente();
-    System.out.println("enter para continuar");
-    sc.nextLine();
-      break;
-  default:
-  System.out.println("Seleccione un aopcion validad");
-    break;
-}
-                 
+                    System.out.println("1. Crear incidente");
+                    System.out.println("2.. Listar incidente");
+                    System.out.println("3.. Salir");
+                    int opcionIncidente = sc.nextInt();
+                    sc.nextLine();
+                    switch (opcionIncidente) {
+                      case 1:
+                        Gestionincidente.CrearIncidente(sc);
+                        System.out.println("enter para continuar");
+                        sc.nextLine();
+                        break;
+                      case 2:
+                        Gestionincidente.ListarIncidente();
+                        System.out.println("enter para continuar");
+                        sc.nextLine();
+                        break;
+                      default:
+                        System.out.println("Seleccione un aopcion validad");
+                        break;
+                    }
 
                     break;
 
@@ -385,13 +382,14 @@ switch (opcionIncidente) {
 
               } while (caso != 5);
             }
+            if (tipoUsuario == "Aficionado") {
+              System.exit(0);
+              // CrearUsuario cu = new CrearUsuario();
+              // Usuario newUser =cu.start();
+              // System.out.println(newUser.getNombre());
+            }
           }
-          if (tipoSeccion == 2) {
-            System.exit(0);
-            // CrearUsuario cu = new CrearUsuario();
-            // Usuario newUser =cu.start();
-            // System.out.println(newUser.getNombre());
-          }
+         
 
           // Salir del bucle si se llega a un caso de finalización
 
