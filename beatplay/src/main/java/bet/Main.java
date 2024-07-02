@@ -6,7 +6,10 @@ import com.jsnunez.View.Actor;
 import com.jsnunez.View.Casos;
 import com.jsnunez.View.PaginaPrincipal;
 import com.jsnunez.View.Portada;
+import com.jsnunez.View.ViewAficionados;
 import com.jsnunez.View.ViewArbitros;
+import com.jsnunez.View.ViewArbitrosFirstOpcion;
+import com.jsnunez.View.ViewEquiposTecnicos;
 import com.jsnunez.View.ViewEstadios;
 import com.jsnunez.View.ViewGestionEntrenadores;
 import com.jsnunez.View.ViewGestionEquipos;
@@ -14,7 +17,9 @@ import com.jsnunez.View.ViewGestionJugadores;
 import com.jsnunez.View.ViewGestionNoticias;
 import com.jsnunez.View.ViewGestionPartidos;
 import com.jsnunez.View.ViewGestionResultado;
+import com.jsnunez.View.ViewMedicosDelEquipos;
 import com.jsnunez.View.ViewPatrocinios;
+import com.jsnunez.View.ViewPeriodistas;
 import com.jsnunez.View.inciarSesion;
 import com.jsnunez.model.DatosInicio;
 import com.jsnunez.model.GEstionEstadio;
@@ -73,10 +78,16 @@ public class Main {
             System.out.println("oprima enter para continuar");
             sc.nextLine();
 
+<<<<<<< HEAD
             Casos c = new Casos();
             caso = c.start(tipoUsuario, sc);
 
+=======
+>>>>>>> 6dea9f4f162bd8f95833f0b3920e64d6a21e050e
             if (tipoUsuario == "Administrador") {
+
+              Casos c = new Casos();
+              caso = c.start(tipoUsuario, sc);
               do {
                 switch (caso) {
                   case 1:
@@ -409,13 +420,37 @@ public class Main {
               } while (caso != 5);
             }
             if (tipoUsuario == "Aficionado") {
-              System.exit(0);
-              System.out.println("");
-              // CrearUsuario cu = new CrearUsuario();
-              // Usuario newUser =cu.start();
-              // System.out.println(newUser.getNombre());
+              ViewAficionados.start();
+
             }
+
+            if (tipoUsuario == "Periodista") {
+              ViewPeriodistas.start();              
+
+            }
+
+            if (tipoUsuario == "Equipo Técnico") {
+
+              ViewEquiposTecnicos.start();
+
+              
+            }
+
+            if (tipoUsuario == "Árbitro") {
+
+              ViewArbitrosFirstOpcion.star();
+
+            }
+
+            if (tipoUsuario == "Médico del Equipo") {
+
+              ViewMedicosDelEquipos.star();
+
+            }
+<<<<<<< HEAD
           }
+=======
+>>>>>>> 6dea9f4f162bd8f95833f0b3920e64d6a21e050e
 
           // Salir del bucle si se llega a un caso de finalización
 
@@ -424,9 +459,6 @@ public class Main {
     }
   }
 
-  private static DatosInicio DatosInicio() {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'DatosInicio'");
-  }
+}
 
 }
