@@ -3,6 +3,8 @@ package com.jsnunez.model;
 import java.util.Enumeration;
 import java.util.Scanner;
 
+import javax.print.DocFlavor.STRING;
+
 import bet.Controller;
 
 public class GestionArbitro {
@@ -27,20 +29,22 @@ public class GestionArbitro {
             System.out.println("experiencia.");
             String experiencia = sc.nextLine();
 
-            sc.nextLine();
             arbitro.setId(id);
             arbitro.setNombre(nombre);
             arbitro.setEdad(edad);
             arbitro.setExperiencia(experiencia);
-
             controlador.arbitros.put(id, arbitro);
-
-            
             usuario.setId(id);
-            usuario.getEmail();
+            System.out.println("Email:");
+            String email = sc.nextLine();
+            usuario.setEmail(email);
+            System.out.println("Password:");
+            String password = sc.nextLine();
+            usuario.setPassword(password);
+            usuario.setRol(controlador.roles.get("005"));
+            controlador.usuarios.put(id, usuario);
 
-            
-
+       
         }
 
     }
@@ -86,6 +90,7 @@ public class GestionArbitro {
         System.out.println("Ingrese el codigo del Arbitro a ELIMINAR: ");
         String codigoJ1 = sc.nextLine();
         Arbitro je = controlador.arbitros.remove(codigoJ1);
+        controlador.usuarios.remove(codigoJ1);
         if (je != null) {
             System.out.println(je.getNombre() + " ah sido ELIMINADO correctamente.");
         } else {

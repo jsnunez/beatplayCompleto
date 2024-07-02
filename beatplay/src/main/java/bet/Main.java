@@ -29,13 +29,13 @@ import com.jsnunez.model.GestionResultado;
 import com.jsnunez.model.Gestionincidente;
 import com.jsnunez.model.UsuarioInicioSesion;
 import com.jsnunez.model.VerificarInicioSeccion;
+
 //hola15615541
 public class Main {
   public static void main(String[] args) {
 
     Controller controlador = new Controller();
     DatosInicio.controlador = controlador;
-
     GestionPartido.controlador = controlador;
     GestionEquipo.controlador = controlador;
     GestionJugador.controlador = controlador;
@@ -48,7 +48,7 @@ public class Main {
     GestionPatrocineo.controlador = controlador;
     GestionArbitro.controlador = controlador;
     Gestionincidente.controlador = controlador;
-    
+
     com.jsnunez.model.DatosInicio.start();
 
     UsuarioInicioSesion usuarioSesion = null;
@@ -75,7 +75,7 @@ public class Main {
 
             Casos c = new Casos();
             caso = c.start(tipoUsuario, sc);
-          
+
             if (tipoUsuario == "Administrador") {
               do {
                 switch (caso) {
@@ -416,7 +416,6 @@ public class Main {
               // System.out.println(newUser.getNombre());
             }
           }
-         
 
           // Salir del bucle si se llega a un caso de finalización
 
