@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class ViewArbitros {
 
     public static int start(Scanner sc) {
-            System.out.println("       ¡MODULO DE ARBITROES!     ");
+            System.out.println("       ¡MODULO DE ARBITROS!     ");
             System.out.println("    1. Agregar nuevo arbitro.");
             System.out.println("    2. Editar un arbitro.");
             System.out.println("    3. Eliminar un arbitro.");
