@@ -1,6 +1,5 @@
 package com.jsnunez.model;
 
-import java.io.NotActiveException;
 import java.util.Enumeration;
 import java.util.Scanner;
 
@@ -11,8 +10,15 @@ public class GestionNoticias {
     public static Controller controlador;
 
     public void EliminarNoticia(Scanner sc) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'EliminarNoticia'");
+
+        System.out.println("Ingresa el codigo de la Noticia a Eliminar: ");
+        String idComunicado = sc.nextLine();
+        Comunicacion en = controlador.comunicaciones.remove(idComunicado);
+        if (en != null){
+            System.out.println(en.getId() + " se ELIMINO correctamente");
+        } else{
+            System.out.println("Noticia no encontrada.");
+        }
     }
 
     public void EditarNoticia(Scanner sc) {

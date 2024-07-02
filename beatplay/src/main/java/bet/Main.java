@@ -1,8 +1,34 @@
 package bet;
 
 import java.util.Scanner;
-import com.jsnunez.View.*;
-import com.jsnunez.model.*;
+
+import com.jsnunez.View.Actor;
+import com.jsnunez.View.Casos;
+import com.jsnunez.View.PaginaPrincipal;
+import com.jsnunez.View.Portada;
+import com.jsnunez.View.ViewArbitros;
+import com.jsnunez.View.ViewEstadios;
+import com.jsnunez.View.ViewGestionEntrenadores;
+import com.jsnunez.View.ViewGestionEquipos;
+import com.jsnunez.View.ViewGestionJugadores;
+import com.jsnunez.View.ViewGestionNoticias;
+import com.jsnunez.View.ViewGestionPartidos;
+import com.jsnunez.View.ViewGestionResultado;
+import com.jsnunez.View.ViewPatrocinios;
+import com.jsnunez.View.inciarSesion;
+import com.jsnunez.model.DatosInicio;
+import com.jsnunez.model.GEstionEstadio;
+import com.jsnunez.model.GestionArbitro;
+import com.jsnunez.model.GestionEntrenadores;
+import com.jsnunez.model.GestionEquipo;
+import com.jsnunez.model.GestionJugador;
+import com.jsnunez.model.GestionNoticias;
+import com.jsnunez.model.GestionPartido;
+import com.jsnunez.model.GestionPatrocineo;
+import com.jsnunez.model.GestionResultado;
+import com.jsnunez.model.Gestionincidente;
+import com.jsnunez.model.UsuarioInicioSesion;
+import com.jsnunez.model.VerificarInicioSeccion;
 //hola15615541
 public class Main {
   public static void main(String[] args) {
@@ -384,6 +410,7 @@ public class Main {
             }
             if (tipoUsuario == "Aficionado") {
               System.exit(0);
+              System.out.println("");
               // CrearUsuario cu = new CrearUsuario();
               // Usuario newUser =cu.start();
               // System.out.println(newUser.getNombre());
