@@ -14,6 +14,8 @@ public class Team {
 
     public Team() {
         listJugadores = new ArrayList<Player>();
+        listPartido = new ArrayList<Partido>();
+
     }
 
     public Team(String id, String nombre, String ciudad, estadio estadio) {
@@ -21,6 +23,7 @@ public class Team {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.estadio = estadio;
+        listPartido = new ArrayList<Partido>();
 
         listJugadores = new ArrayList<Player>();
 
@@ -80,6 +83,13 @@ public class Team {
 
     public void setListPartido(Partido partido) {
         this.listPartido.add(partido);
+    }
+
+    public void modiListjugador(List<Player> listPeriodistas2) {
+        this.listJugadores=listPeriodistas2;
+    }
+    public void modiListpartiodos(List<Partido> listPartido) {
+        this.listPartido=listPartido;
     }
 
 }

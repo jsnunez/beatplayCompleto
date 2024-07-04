@@ -2,6 +2,8 @@ package com.jsnunez.View;
 
 import java.io.Console;
 import java.util.Scanner;
+
+import com.jsnunez.model.Clc;
 import com.jsnunez.model.UsuarioInicioSesion;
 
 public class inciarSesion {
@@ -9,7 +11,7 @@ public class inciarSesion {
     public UsuarioInicioSesion start(Scanner sc) {
         char[] pass = null;
         String password = null;
-
+    Clc.clc();
         System.out.println("Ingrese nombre usuario");
         String user = sc.nextLine();
 

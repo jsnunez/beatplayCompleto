@@ -43,6 +43,7 @@ public class GestionEquipo {
             equipo.setId(id);
             equipo.setNombre(nombre);
             equipo.setCiudad(ciudad);
+            equipo.setEstadio(estadio);
             controlador.equipos.put(id, equipo);
 
         }
@@ -121,7 +122,7 @@ public class GestionEquipo {
 
     }
 
-    public void ListarEquipos(Scanner sc) {
+    public static void ListarEquipos() {
 
         Enumeration<String> teamKeys = controlador.equipos.keys();
 

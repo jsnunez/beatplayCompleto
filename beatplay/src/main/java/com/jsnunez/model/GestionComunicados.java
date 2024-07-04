@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 import bet.Controller;
 
-public class GestionMediosC {
+public class GestionComunicados {
     public static Controller controlador;
 
     public void Eliminarmedioscomunicacion(Scanner sc) {
@@ -101,5 +101,7 @@ public class GestionMediosC {
         controlador.comunicaciones.put(id, comunicacion);
 
     }
+
+
 
 }

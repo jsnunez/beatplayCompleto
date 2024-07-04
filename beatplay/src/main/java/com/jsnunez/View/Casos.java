@@ -2,16 +2,21 @@ package com.jsnunez.View;
 
 import java.util.Scanner;
 
+import com.jsnunez.model.Clc;
+
 public class Casos {
 
-    public int start(String casos, Scanner sc) {
+    public static int start(String casos, Scanner sc) {
         int casoUsar;
         if (casos == null) {
 
         }
 
         if (casos == "Administrador") {
+            Clc.clc();
 
+System.out.println("INICIASTE SESION COMO ADMINISTRTADOR SELECCIONA LA OPCION DESEADA");
+System.out.println();
             String[] items = {
                     "1. Gestión de Equipos",
                     "2. Gestión de Jugadores",
@@ -30,8 +35,8 @@ public class Casos {
                     "15. Gestión de Premios y Reconocimientos",
                     "16. Gestión de Usuarios y Roles",
                     "17. Gestión de Patrocinadores y Publicidad",
-                    "18. Gestión de Relaciones Públicas"
-                    
+                    "18. Gestión de Relaciones Públicas",
+                    "19.Salir"
             };
 
             for (String item : items) {

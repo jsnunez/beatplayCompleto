@@ -101,9 +101,14 @@ public class DatosInicio {
         // Equipo 1
         Player jugador1 = new Player("001", "Brandon", "Camargo", 30, "colombiano", "medio", 10, equipo1, null, null);
         controlador.jugadores.put("001", jugador1);
+
         Player jugador2 = new Player("002", "Sebastian", "Nunez", 29, "colombiano", "delantero", 9, equipo1, null, null);
         controlador.jugadores.put("002", jugador2);
         // ... añadir los otros 13 jugadores para equipo1
+        equipo1.setListJugadores(jugador1);
+equipo1.setListJugadores(jugador2);
+
+controlador.equipos.put("001", equipo1);
 
         // Equipo 2
         Player jugador16 = new Player("016", "Carlos", "Lopez", 25, "colombiano", "defensa", 5, equipo2, null, null);
