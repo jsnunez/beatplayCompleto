@@ -96,7 +96,8 @@ public class DatosInicio {
         controlador.partidos.put("005", partido4);
         Partido partido5 = new Partido("006", equipo2, equipo3, "17/06/24", "10:00am", estadio5);
         controlador.partidos.put("006", partido5);
-
+        Partido partido6 = new Partido("007", equipo1, equipo2, "17/06/24", "10:00am", estadio5);
+        controlador.partidos.put("007", partido6);
         // Jugadores para cada equipo
         // Equipo 1
         Player jugador1 = new Player("001", "Brandon", "Camargo", 30, "colombiano", "medio", 10, equipo1, null, null);
@@ -116,7 +117,10 @@ controlador.equipos.put("001", equipo1);
         Player jugador17 = new Player("017", "Camilo", "Martinez", 24, "colombiano", "portero", 1, equipo2, null, null);
         controlador.jugadores.put("017", jugador17);
         // ... añadir los otros 13 jugadores para equipo2
+        equipo2.setListJugadores(jugador16);
+equipo2.setListJugadores(jugador17);
 
+controlador.equipos.put("002", equipo2);
         // Equipo 3
         Player jugador31 = new Player("031", "Fabian", "Gomez", 26, "colombiano", "medio", 8, equipo3, null, null);
         controlador.jugadores.put("031", jugador31);

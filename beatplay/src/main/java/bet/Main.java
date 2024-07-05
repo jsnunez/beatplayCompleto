@@ -75,6 +75,8 @@ public class Main {
           usuarioSesion = is.start(sc);
           VerificarInicioSeccion vs = new VerificarInicioSeccion();
           tipoUsuario = vs.start(usuarioSesion);
+
+          
           if (tipoUsuario != null) {
             Actor a = new Actor();
             a.start();
