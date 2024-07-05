@@ -74,8 +74,10 @@ public class GestionMediosComunicacion {
 
             System.out.println("Ingrese nombre del medio de comunicacion");
             String nombre = sc.nextLine();
+            medios.setNombre(nombre);
             System.out.println("Ingresa tipo de medio.");
             String tipo = sc.nextLine();
+            medios.setTipoMedio(tipo);
             System.out.println("Desea modificar el listado de periodistas");
             System.out.println("1. Si");
             System.out.println("2. No");

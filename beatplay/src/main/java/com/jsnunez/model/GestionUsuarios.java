@@ -141,4 +141,13 @@ public class GestionUsuarios {
         }
 
     }
+    public static void ListarUsuarios() {
+        Enumeration<String> playerKeys = controlador.usuarios.keys();
+    
+        while (playerKeys.hasMoreElements()) {
+            String playerKey = playerKeys.nextElement();
+            System.out.println("ID: " + playerKey + " Nombre : " +
+                    controlador.usuarios.get(playerKey).getNombre()+
+                    "Rol"+controlador.usuarios.get(playerKey).getRol().getNombre());
+        }}
 }

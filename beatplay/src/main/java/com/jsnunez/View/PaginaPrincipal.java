@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PaginaPrincipal {
 
-    public static int  start(Scanner sc) {
+    public int  start(Scanner sc) {
 
         System.out.println("1. Iniciar Sesion");
         System.out.println("2. Salir");

@@ -2,7 +2,6 @@ package com.jsnunez.model;
 
 import java.util.Scanner;
 
-import com.jsnunez.View.ViewGestionJugadores;
 
 public class GestionAficionados {
 

@@ -27,7 +27,7 @@ public class DatosInicio {
 
         // Usuarios
         Usuario usuario11 = new Usuario("001", "", "jsnunez@gmail.com", "", rol);
-        controlador.usuarios.put("011", usuario11);
+        controlador.usuarios.put("001", usuario11);
         Usuario usuario = new Usuario("002", "joan", "jsnunez94@gmail.com", "123456", rol);
         controlador.usuarios.put("002", usuario);
         Usuario usuario1 = new Usuario("003", "ana", "ana@example.com", "123", rol1);

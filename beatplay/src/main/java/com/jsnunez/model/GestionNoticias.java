@@ -30,7 +30,6 @@ public class GestionNoticias {
     public void PublicarNoticia(Scanner sc) {
 
         Comunicacion comunicacion = new Comunicacion();
-        Enumeration<String> playerKeys = controlador.comunicaciones.keys();
 
         VerNoticia();
         System.out.println("Selecionar id del comunicado a publicar");

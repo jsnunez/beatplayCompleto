@@ -13,7 +13,6 @@ public class Casos {
         }
 
         if (casos == "Administrador") {
-            Clc.clc();
 
 System.out.println("INICIASTE SESION COMO ADMINISTRTADOR SELECCIONA LA OPCION DESEADA");
 System.out.println();

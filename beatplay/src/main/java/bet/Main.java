@@ -2,46 +2,10 @@ package bet;
 
 import java.util.Scanner;
 
-import com.jsnunez.View.Actor;
-import com.jsnunez.View.Casos;
-import com.jsnunez.View.PaginaPrincipal;
-import com.jsnunez.View.Portada;
-import com.jsnunez.View.ViewAficionados;
-import com.jsnunez.View.ViewArbitros;
-import com.jsnunez.View.ViewArbitrosFirstOpcion;
-import com.jsnunez.View.ViewEquiposTecnicos;
-import com.jsnunez.View.ViewEstadios;
-import com.jsnunez.View.ViewGestionEntrenadores;
-import com.jsnunez.View.ViewGestionEquipos;
-import com.jsnunez.View.ViewGestionJugadores;
-import com.jsnunez.View.ViewGestionNoticias;
-import com.jsnunez.View.ViewGestionPartidos;
-import com.jsnunez.View.ViewGestionResultado;
-import com.jsnunez.View.ViewMedicosDelEquipos;
-import com.jsnunez.View.ViewPatrocinios;
-import com.jsnunez.View.ViewPeriodistas;
-import com.jsnunez.View.inciarSesion;
-import com.jsnunez.model.Clc;
-import com.jsnunez.model.DatosInicio;
-import com.jsnunez.model.GEstionEstadio;
-import com.jsnunez.model.GestionAdministrador;
-import com.jsnunez.model.GestionAficionados;
-import com.jsnunez.model.GestionArbitro;
-import com.jsnunez.model.GestionEntrenadores;
-import com.jsnunez.model.GestionEquipamento;
-import com.jsnunez.model.GestionEquipo;
-import com.jsnunez.model.GestionJugador;
-import com.jsnunez.model.GestionMediosComunicacion;
-import com.jsnunez.model.GestionNoticias;
-import com.jsnunez.model.GestionPartido;
-import com.jsnunez.model.GestionPatrocineo;
-import com.jsnunez.model.GestionPremios;
-import com.jsnunez.model.GestionResultado;
-import com.jsnunez.model.GestionTransferencias;
-import com.jsnunez.model.GestionUsuarios;
-import com.jsnunez.model.Gestionincidente;
-import com.jsnunez.model.UsuarioInicioSesion;
-import com.jsnunez.model.VerificarInicioSeccion;
+import com.jsnunez.View.*;
+
+
+import com.jsnunez.model.*;
 
 //hola15615541
 public class Main {
@@ -62,22 +26,22 @@ public class Main {
     GestionArbitro.controlador = controlador;
     Gestionincidente.controlador = controlador;
     GestionMediosComunicacion.controlador = controlador;
-        GestionTransferencias.controlador = controlador;
-        
+    GestionTransferencias.controlador = controlador;
     GestionUsuarios.controlador = controlador;
-        GestionEquipamento.controlador = controlador;
-
-        GestionPremios.controlador = controlador;
+    GestionEquipamento.controlador = controlador;
+    GestionPremios.controlador = controlador;
+    GestionPublicidad.controlador = controlador;
+    GestionRelaciones.controlador = controlador;
 
     com.jsnunez.model.DatosInicio.start();
-
+    Clc.clc();
     UsuarioInicioSesion usuarioSesion = null;
     String tipoUsuario = null;
-    int caso;
+   
 
     try (Scanner sc = new Scanner(System.in)) {
       while (true) {
-        Portada p = new Portada();
+        // Portada p = new Portada();
         // p.start();
         PaginaPrincipal pp = new PaginaPrincipal();
         int tipoSeccion = pp.start(sc);
@@ -88,7 +52,6 @@ public class Main {
           VerificarInicioSeccion vs = new VerificarInicioSeccion();
           tipoUsuario = vs.start(usuarioSesion);
 
-          
           if (tipoUsuario != null) {
             Actor a = new Actor();
             a.start();
@@ -97,20 +60,18 @@ public class Main {
             Clc.clc();
             if (tipoUsuario == "Administrador") {
 
-              Casos c = new Casos();
-              caso = c.start(tipoUsuario, sc);
               Clc.clc();
-              GestionAdministrador.menu(sc, caso);
-             
+              GestionAdministrador.menu(sc);
+
             }
             if (tipoUsuario == "Aficionado") {
-              int opcionAficionado=ViewAficionados.start(sc);
+              int opcionAficionado = ViewAficionados.start(sc);
               switch (opcionAficionado) {
                 case 1:
                   GestionAficionados.visualizacion(sc);
-                  
+
                   break;
-              
+
                 default:
                   break;
               }

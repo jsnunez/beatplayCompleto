@@ -5,18 +5,18 @@ import java.util.Scanner;
 
 import bet.Controller;
 
-public class GestionPatrocineo {
-
+public class GestionPublicidad {
+    
     public static Controller controlador;
 
     public static void CrearPatrocinador(Scanner sc) {
 
-        Patrocinador patrocinadores = new Patrocinador();
+        Publicidad publicidad = new Publicidad();
         ListarPatrocinador();
-        System.out.println("Ingresa el ID del Patrocinador");
+        System.out.println("Ingresa el ID de la publicidad");
         String id = sc.nextLine();
         if (controlador.patrocinadores.containsKey(id)) {
-            System.out.println("El código del Patrocinador ya existe. Por favor, intente con otro código.");
+            System.out.println("El código de la publicidad ya existe. Por favor, intente con otro código.");
         } else {
             System.out.println("Ingrese el nombre del Patrocinador");
             String nombre = sc.nextLine();
@@ -28,20 +28,18 @@ public class GestionPatrocineo {
             int monto = sc.nextInt();
             sc.nextLine();
 
-            System.out.println("fechainicio.");
-            String fechainicio = sc.nextLine();
-            System.out.println("fechafin.");
-            String fechafin = sc.nextLine();
-            patrocinadores.setId(id);
-            patrocinadores.setNombre(nombre);
-            patrocinadores.setTipo(tipo);
-            patrocinadores.setMonto(monto);
+            System.out.println("duracion.");
+            String duracion = sc.nextLine();
+         
+            publicidad.setId(id);
+            publicidad.setNombre(nombre);
+            publicidad.setTipo(tipo);
+            publicidad.setMonto(monto);
 
-            patrocinadores.setFechaInicio(fechainicio);
+            publicidad.setDuracion(duracion);
 
-            patrocinadores.setFechaFin(fechafin);
 
-            controlador.patrocinadores.put(id, patrocinadores);
+            controlador.publicidad.put(id, publicidad);
 
         }
 

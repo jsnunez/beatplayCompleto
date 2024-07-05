@@ -8,7 +8,7 @@ public class VerificarInicioSeccion {
 
     public static Controller controlador;
 
-    public static String start(UsuarioInicioSesion usuario) {
+    public String start(UsuarioInicioSesion usuario) {
         Usuario usuarioRegistrado = new Usuario();
 
         Enumeration<String> teamKeys = controlador.usuarios.keys();

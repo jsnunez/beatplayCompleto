@@ -16,14 +16,16 @@ import com.jsnunez.View.ViewGestionTransferencias;
 import com.jsnunez.View.ViewGestionmedioC;
 import com.jsnunez.View.ViewPatrocinios;
 import com.jsnunez.View.ViewPremios;
+import com.jsnunez.View.ViewPublicidad;
 import com.jsnunez.View.ViewUsuarios;
 import com.jsnunez.model.GestionEntrenadores.controlador;
 
 public class GestionAdministrador {
 
-  public static void menu(Scanner sc, int caso) {
-
+  public static void menu(Scanner sc) {
+   int caso =0;
     do {
+      caso = Casos.start("Administrador", sc);
       Clc.clc();
       switch (caso) {
 
@@ -416,7 +418,7 @@ public class GestionAdministrador {
             sc.nextLine();
             switch (opcionequipamento) {
               case 1:
-              GestionEquipamento.CrearEquipamento(sc);
+                GestionEquipamento.CrearEquipamento(sc);
                 break;
               case 2:
 
@@ -467,48 +469,127 @@ public class GestionAdministrador {
             }
           } while (opcionpremios != 4);
         case 16:
-        int opcionusurio=1;
-        do {
-          
-       
-ViewUsuarios.star();
-opcionusurio=sc.nextInt();
-sc.nextLine();
-switch (opcionusurio) {
-  case 1:
-    GestionUsuarios.CrearUsuarios(sc);
-    break;
-    case 2:
-    
-    break;
-    case 3:
-    
-    break;
-    case 4:
-    
-    break;
-    case 5:
-    
-    break;
-  default:
-    break;
-}
+          int opcionusurio = 1;
+          do {
 
-} while (opcionusurio!= 5);
+            ViewUsuarios.star();
+            opcionusurio = sc.nextInt();
+            sc.nextLine();
+            switch (opcionusurio) {
+              case 1:
+                GestionUsuarios.CrearUsuarios(sc);
+                break;
+              case 2:
+
+                break;
+              case 3:
+
+                break;
+              case 4:
+
+                break;
+              case 5:
+
+                break;
+              default:
+                break;
+            }
+
+          } while (opcionusurio != 5);
           break;
+        case 17:
+
+          int opcionPublicidad = 0;
+          do {
+
+            ViewPublicidad.star();
+            opcionPublicidad = sc.nextInt();
+            sc.nextLine();
+            switch (opcionPublicidad) {
+              case 1:
+              GestionPublicidad.CrearPatrocinador(sc);                break;
+              case 2:
+
+                break;
+              case 3:
+
+                break;
+              case 4:
+
+                break;
+              case 5:
+
+                break;
+              default:
+                break;
+            }
+           
+        
+
+          } while (opcionPublicidad != 5);
+       
+        case 18:
+
+        int opcionRelaciones = 0;
+        do {
+
+          ViewPublicidad.star();
+          opcionRelaciones = sc.nextInt();
+          sc.nextLine();
+          switch (opcionRelaciones) {
+            case 1:
+            GestionRelaciones.CrearRelaciones(sc);
+            break;
+            case 2:
+
+              break;
+            case 3:
+
+              break;
+            case 4:
+
+              break;
+            case 5:
+
+              break;
+            default:
+              break;
+          }
+         
+      
+
+        } while (opcionRelaciones != 5);
         case 19:
+   
+          
+     
+System.out.println("Vuelve pronto");
+      System.out.println("Cerrando sesion");
+      for (int i = 0; i < 50; i++) {
+          System.out.print(".");
+          try {
+              Thread.sleep(5 * 5);
+          } catch (InterruptedException e) {
+              // TODO Auto-generated catch block
+              e.printStackTrace();
+          }
+
+      }
+      Clc.clc();
 
           break;
 
         default:
+        
+
           System.out.println("Opcion no valida");
-          System.out.println("Ingrese una opcion valida");
-          caso = sc.nextInt();
+          System.out.println("Ingrese una opcion valida o oprima 19 para salir");
+
           sc.nextLine();
-          continue;
+          break;
       }
 
-      caso = Casos.start("Administrador", sc);
+     
     } while (caso != 19);
 
   }
