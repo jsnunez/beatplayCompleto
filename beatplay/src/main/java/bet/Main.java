@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import com.jsnunez.View.*;
 
-
 import com.jsnunez.model.*;
 
 //hola15615541
@@ -37,7 +36,6 @@ public class Main {
     Clc.clc();
     UsuarioInicioSesion usuarioSesion = null;
     String tipoUsuario = null;
-   
 
     try (Scanner sc = new Scanner(System.in)) {
       while (true) {
@@ -65,38 +63,154 @@ public class Main {
 
             }
             if (tipoUsuario == "Aficionado") {
-              int opcionAficionado = ViewAficionados.start(sc);
-              switch (opcionAficionado) {
-                case 1:
-                  GestionAficionados.visualizacion(sc);
+              int opcionAficionado = 0;
+              do {
 
-                  break;
+                opcionAficionado = ViewAficionados.start(sc);
+                switch (opcionAficionado) {
+                  case 1:
 
-                default:
-                  break;
-              }
+                    GestionAficionados.visualizacion(sc);
+
+                    break;
+                  case 2:
+
+                    break;
+                  case 3:
+
+                    break;
+                  case 4:
+                    Cerrarsesion.start();
+                    Clc.clc();
+                    break;
+
+                  default:
+                    break;
+
+                }
+              } while (opcionAficionado != 4);
             }
 
             if (tipoUsuario == "Periodista") {
-              ViewPeriodistas.start();
 
+             
+              int opcionPeriodista = 0;
+              do {
+
+                opcionPeriodista =  ViewPeriodistas.start(sc);
+                switch (opcionPeriodista) {
+                  case 1:
+
+                    GestionAficionados.visualizacion(sc);
+
+                    break;
+                  case 2:
+
+                    break;
+                  case 3:
+
+                    break;
+                  case 4:
+                    
+                    break;
+                    case 5:
+                    Cerrarsesion.start();
+                    Clc.clc();
+                    break;
+                  default:
+                    break;
+
+                }
+              } while (opcionPeriodista != 5);
             }
 
             if (tipoUsuario == "Equipo Técnico") {
 
-              ViewEquiposTecnicos.start();
+              
+              int opcionPeriodista = 0;
+              do {
+
+                opcionPeriodista =  ViewEquiposTecnicos.start(sc);
+                switch (opcionPeriodista) {
+                  case 1:
+
+                    GestionAficionados.visualizacion(sc);
+
+                    break;
+                  case 2:
+
+                    break;
+                  case 3:
+
+                    break;
+                  case 12:
+                    Cerrarsesion.start();
+                    Clc.clc();
+                    break;
+
+                  default:
+                    break;
+
+                }
+              } while (opcionPeriodista != 12);
 
             }
 
             if (tipoUsuario == "Árbitro") {
 
-              ViewArbitrosFirstOpcion.star();
+            
+              int opcionArbitro = 0;
+              do {
+
+                opcionArbitro =    ViewArbitrosFirstOpcion.star(sc);
+                switch (opcionArbitro) {
+                  case 1:
+
+                    GestionAficionados.visualizacion(sc);
+
+                    break;
+                  case 2:
+
+                    break;
+                  case 3:
+                  Cerrarsesion.start();
+                  Clc.clc();
+                    break;
+                
+                  default:
+                    break;
+
+                }
+              } while (opcionArbitro != 3);
 
             }
 
             if (tipoUsuario == "Médico del Equipo") {
 
-              ViewMedicosDelEquipos.star();
+            
+              int opcionMedico = 0;
+              do {
+
+                opcionMedico =     ViewMedicosDelEquipos.star(sc);
+                switch (opcionMedico) {
+                  case 1:
+
+                    GestionAficionados.visualizacion(sc);
+
+                    break;
+                  case 2:
+
+                    break;
+                  case 3:
+                  Cerrarsesion.start();
+                  Clc.clc();
+                    break;
+                
+                  default:
+                    break;
+
+                }
+              } while (opcionMedico != 3);
 
             }
 

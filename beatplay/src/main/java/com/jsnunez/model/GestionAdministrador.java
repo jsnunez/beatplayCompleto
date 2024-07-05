@@ -561,20 +561,9 @@ public class GestionAdministrador {
         } while (opcionRelaciones != 5);
         case 19:
    
-          
+          Cerrarsesion.start();
      
-System.out.println("Vuelve pronto");
-      System.out.println("Cerrando sesion");
-      for (int i = 0; i < 50; i++) {
-          System.out.print(".");
-          try {
-              Thread.sleep(5 * 5);
-          } catch (InterruptedException e) {
-              // TODO Auto-generated catch block
-              e.printStackTrace();
-          }
 
-      }
       Clc.clc();
 
           break;

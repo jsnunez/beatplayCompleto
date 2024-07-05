@@ -1,8 +1,10 @@
 package com.jsnunez.View;
 
+import java.util.Scanner;
+
 public class ViewEquiposTecnicos {
 
-    public static void start() {
+    public static int start(Scanner sc) {
 
         System.out.println("    ERES EL MEJOR TECNICO DEL EQUIPO!");
         System.out.println();
@@ -17,6 +19,11 @@ public class ViewEquiposTecnicos {
         System.out.println("      9.Gestión de Transferencias de Jugadores");
         System.out.println("      10.Gestión de Equipamiento");
         System.out.println("      11.Gestión de Convocatorias de Jugadores");
+        System.out.println("      12.Salir");
+
+        int opcion =sc.nextInt();
+        sc.nextLine();
+return(opcion);
     }
 
 }
