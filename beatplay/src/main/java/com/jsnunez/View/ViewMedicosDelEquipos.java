@@ -11,7 +11,6 @@ public class ViewMedicosDelEquipos {
         System.out.println("      1.Gestión de Lesiones de Jugadores");
         System.out.println("      2.Gestión de Medios de Comunicación");
         System.out.println("      3.Salir");
-        
 
         int opcion =sc.nextInt();
         sc.nextLine();
