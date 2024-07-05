@@ -8,7 +8,6 @@ import com.jsnunez.View.ViewEquipamento;
 import com.jsnunez.View.ViewEstadios;
 import com.jsnunez.View.ViewGestionEntrenadores;
 import com.jsnunez.View.ViewGestionEquipos;
-import com.jsnunez.View.ViewGestionJugadores;
 import com.jsnunez.View.ViewGestionNoticias;
 import com.jsnunez.View.ViewGestionPartidos;
 import com.jsnunez.View.ViewGestionResultado;
@@ -18,7 +17,6 @@ import com.jsnunez.View.ViewPatrocinios;
 import com.jsnunez.View.ViewPremios;
 import com.jsnunez.View.ViewPublicidad;
 import com.jsnunez.View.ViewUsuarios;
-import com.jsnunez.model.GestionEntrenadores.controlador;
 
 public class GestionAdministrador {
 
@@ -64,34 +62,8 @@ public class GestionAdministrador {
 
           break;
         case 2:
-          ViewGestionJugadores gj = new ViewGestionJugadores();
-
-          GestionJugador gunj = new GestionJugador();
-          int opcionJugadores;
-          do {
-            opcionJugadores = gj.start(sc);
-            switch (opcionJugadores) {
-              case 1:
-                gunj.CrearJugador(sc);
-                break;
-
-              case 2:
-                gunj.EditarJugador(sc);
-                break;
-
-              case 3:
-                gunj.EliminarJugador(sc);
-                break;
-              case 4:
-                gunj.ListarJugadores();
-                break;
-              case 5:
-                break;
-              default:
-                throw new AssertionError();
-
-            }
-          } while (opcionJugadores != 5);
+         
+        GestionCompletaJugadores.star(sc);
           break;
 
         case 3:
@@ -158,8 +130,8 @@ public class GestionAdministrador {
           GestionNoticias gn = new GestionNoticias();
 
           do {
-            opcionResultado = vgn.start(sc);
-            switch (opcionResultado) {
+            opcionNoticias = vgn.start(sc);
+            switch (opcionNoticias) {
               case 1:
                 gn.CrearNoticia(sc);
                 break;
@@ -185,39 +157,13 @@ public class GestionAdministrador {
               default:
                 System.out.println("seleccione una opcion valida");
             }
-          } while (opcionResultado != 6);
+          } while (opcionNoticias != 6);
           break;
 
         case 6:
 
-          ViewGestionEntrenadores vge = new ViewGestionEntrenadores();
-
-          GestionEntrenadores gen = new GestionEntrenadores();
-          int opcionEntrenadores;
-          do {
-            opcionEntrenadores = vge.start(sc);
-            switch (opcionEntrenadores) {
-              case 1:
-                gen.CrearEntrenador(sc);
-                break;
-
-              case 2:
-                gen.EditarEntrenador(sc);
-                break;
-
-              case 3:
-                gen.EliminarEntrenador(sc);
-
-              case 4:
-                gen.ListarEntrenadores();
-                break;
-              case 5:
-                break;
-              default:
-                System.out.println("seleccione una opcion valida");
-
-            }
-          } while (opcionEntrenadores != 5);
+        ViewGestionEntrenadores.start(sc);
+          
           break;
 
         case 7:
