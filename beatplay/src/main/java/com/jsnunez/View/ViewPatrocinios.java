@@ -5,10 +5,10 @@ import java.util.Scanner;
 public class ViewPatrocinios {
     public static int start(Scanner sc) {
             System.out.println("       ¡MODULO DE PATROCINEOS!     ");
-            System.out.println("    1. Agregar nuevo ptrocineos.");
-            System.out.println("    2. Editar un ptrocineos.");
-            System.out.println("    3. Eliminar un ptrocineos.");
-            System.out.println("    4. Listar ptrocineoses.");
+            System.out.println("    1. Agregar nuevo patrocineos.");
+            System.out.println("    2. Editar un patrocineos.");
+            System.out.println("    3. Eliminar un patrocineos.");
+            System.out.println("    4. Listar patrocineoses.");
             System.out.println("    5. Salir.");
 
             int opcion = sc.nextInt();
@@ -16,21 +16,21 @@ public class ViewPatrocinios {
             sc.nextLine();
             switch (opcion) {
                     case 1:
-                            System.out.println("    ¡CREACION DE UN NUEVO PTROCINEO!");
+                            System.out.println("    ¡CREACION DE UN NUEVO PATROCINEO!");
 
                             break;
 
                     case 2:
-                            System.out.println("   EDITAR PTROCINEO");
+                            System.out.println("   EDITAR PATROCINEO");
 
                             break;
 
                     case 3:
-                            System.out.println("    ELIMINAR PTROCINEO");
+                            System.out.println("    ELIMINAR PATROCINEO");
 
                             break;
                     case 4:
-                            System.out.println("    LISTAR PTROCINEO");
+                            System.out.println("    LISTAR PATROCINEO");
 
                             break;
 

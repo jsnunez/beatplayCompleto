@@ -25,15 +25,20 @@ import com.jsnunez.model.Clc;
 import com.jsnunez.model.DatosInicio;
 import com.jsnunez.model.GEstionEstadio;
 import com.jsnunez.model.GestionAdministrador;
+import com.jsnunez.model.GestionAficionados;
 import com.jsnunez.model.GestionArbitro;
 import com.jsnunez.model.GestionEntrenadores;
+import com.jsnunez.model.GestionEquipamento;
 import com.jsnunez.model.GestionEquipo;
 import com.jsnunez.model.GestionJugador;
 import com.jsnunez.model.GestionMediosComunicacion;
 import com.jsnunez.model.GestionNoticias;
 import com.jsnunez.model.GestionPartido;
 import com.jsnunez.model.GestionPatrocineo;
+import com.jsnunez.model.GestionPremios;
 import com.jsnunez.model.GestionResultado;
+import com.jsnunez.model.GestionTransferencias;
+import com.jsnunez.model.GestionUsuarios;
 import com.jsnunez.model.Gestionincidente;
 import com.jsnunez.model.UsuarioInicioSesion;
 import com.jsnunez.model.VerificarInicioSeccion;
@@ -57,6 +62,13 @@ public class Main {
     GestionArbitro.controlador = controlador;
     Gestionincidente.controlador = controlador;
     GestionMediosComunicacion.controlador = controlador;
+        GestionTransferencias.controlador = controlador;
+        
+    GestionUsuarios.controlador = controlador;
+        GestionEquipamento.controlador = controlador;
+
+        GestionPremios.controlador = controlador;
+
     com.jsnunez.model.DatosInicio.start();
 
     UsuarioInicioSesion usuarioSesion = null;
@@ -92,8 +104,16 @@ public class Main {
              
             }
             if (tipoUsuario == "Aficionado") {
-              ViewAficionados.start();
-
+              int opcionAficionado=ViewAficionados.start(sc);
+              switch (opcionAficionado) {
+                case 1:
+                  GestionAficionados.visualizacion(sc);
+                  
+                  break;
+              
+                default:
+                  break;
+              }
             }
 
             if (tipoUsuario == "Periodista") {

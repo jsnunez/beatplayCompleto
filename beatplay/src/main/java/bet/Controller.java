@@ -25,8 +25,9 @@ public class Controller {
     public Hashtable<String, estadio> estadios = new Hashtable<>();
     public Hashtable<String, rendimiento> rendimientos = new Hashtable<>();
     public Hashtable<String, MedioDeComunicacion> medios = new Hashtable<>();
-    public Hashtable<String, Entrenadores> entrenadores = new Hashtable<>();
-    
+    public Hashtable<String, Entrenadores> entrenadores = new Hashtable<>();    
+    public Hashtable<String, Premios> premios = new Hashtable<>();
     public Hashtable<String, Arbitro> arbitros = new Hashtable<>();
+    public Hashtable<String, Equipamiento> equipamiento = new Hashtable<>();
 
 }

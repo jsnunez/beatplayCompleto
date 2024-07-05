@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import com.jsnunez.View.Casos;
 import com.jsnunez.View.ViewArbitros;
+import com.jsnunez.View.ViewEquipamento;
 import com.jsnunez.View.ViewEstadios;
 import com.jsnunez.View.ViewGestionEntrenadores;
 import com.jsnunez.View.ViewGestionEquipos;
@@ -11,8 +12,11 @@ import com.jsnunez.View.ViewGestionJugadores;
 import com.jsnunez.View.ViewGestionNoticias;
 import com.jsnunez.View.ViewGestionPartidos;
 import com.jsnunez.View.ViewGestionResultado;
+import com.jsnunez.View.ViewGestionTransferencias;
 import com.jsnunez.View.ViewGestionmedioC;
 import com.jsnunez.View.ViewPatrocinios;
+import com.jsnunez.View.ViewPremios;
+import com.jsnunez.View.ViewUsuarios;
 import com.jsnunez.model.GestionEntrenadores.controlador;
 
 public class GestionAdministrador {
@@ -22,9 +26,9 @@ public class GestionAdministrador {
     do {
       Clc.clc();
       switch (caso) {
-        
+
         case 1:
- 
+
           ViewGestionEquipos ge = new ViewGestionEquipos();
           GestionEquipo gune = new GestionEquipo();
           int opcionEquipos;
@@ -75,7 +79,7 @@ public class GestionAdministrador {
 
               case 3:
                 gunj.EliminarJugador(sc);
-break;
+                break;
               case 4:
                 gunj.ListarJugadores();
                 break;
@@ -301,13 +305,14 @@ break;
                 break;
               default:
                 System.out.println("seleccione una opcion valida");
-break;
+                break;
             }
           } while (opcionPatrocineo != 5);
 
           break;
 
         case 10:
+
           break;
 
         case 11:
@@ -335,50 +340,162 @@ break;
           break;
 
         case 12:
-        int opcionGestionmedios = ViewGestionmedioC.start(sc);
-      do{
-        
-          switch (opcionGestionmedios) {
-            case 1:
-              GestionMediosComunicacion.CrearMedio(sc);
-              System.out.println("enter para continuar");
-              sc.nextLine();
-              break;
-            case 2:
-              GestionMediosComunicacion.EditarMedio(sc);
-              System.out.println("enter para continuar");
-              sc.nextLine();
-              break;
-            case 3:
-              GestionMediosComunicacion.EliminarMedio(sc);
-              System.out.println("enter para continuar");
-              sc.nextLine();
-              break;
-            case 4:
-              GestionMediosComunicacion.ListarMedio();
-              System.out.println("enter para continuar");
-              sc.nextLine();
-              break;
-            case 5:
+          int opcionGestionmedios = ViewGestionmedioC.start(sc);
+          do {
 
-              break;
-            default:
-              System.out.println("Seleccione una opcion validad");
-              opcionGestionmedios = ViewGestionmedioC.start(sc);
+            switch (opcionGestionmedios) {
+
+              case 1:
+                GestionMediosComunicacion.CrearMedio(sc);
+                System.out.println("enter para continuar");
+                sc.nextLine();
+                opcionGestionmedios = ViewGestionmedioC.start(sc);
+                break;
+              case 2:
+                GestionMediosComunicacion.EditarMedio(sc);
+                System.out.println("enter para continuar");
+                sc.nextLine();
+                opcionGestionmedios = ViewGestionmedioC.start(sc);
+                break;
+              case 3:
+                GestionMediosComunicacion.EliminarMedio(sc);
+                System.out.println("enter para continuar");
+                sc.nextLine();
+                opcionGestionmedios = ViewGestionmedioC.start(sc);
+                break;
+              case 4:
+                GestionMediosComunicacion.ListarMedio();
+                System.out.println("enter para continuar");
+                sc.nextLine();
+                opcionGestionmedios = ViewGestionmedioC.start(sc);
+                break;
+              case 5:
+
+                break;
+              default:
+                System.out.println("Seleccione una opcion validad");
+                opcionGestionmedios = ViewGestionmedioC.start(sc);
+
             }
           } while (opcionGestionmedios != 5);
 
           break;
         case 13:
+          int opcion = 1;
+          do {
+            ViewGestionTransferencias.star();
+            opcion = sc.nextInt();
+            sc.nextLine();
+            switch (opcion) {
+              case 1:
+                GestionTransferencias.Transferencia(sc);
+                break;
+              case 2:
+
+                break;
+              case 3:
+
+                break;
+              case 4:
+
+                break;
+
+              default:
+                System.out.println("seleccione un valor valido");
+                break;
+            }
+          } while (opcion != 4);
+
           break;
 
         case 14:
+          int opcionequipamento = 1;
+          do {
+            ViewEquipamento.star();
+            opcionequipamento = sc.nextInt();
+            sc.nextLine();
+            switch (opcionequipamento) {
+              case 1:
+              GestionEquipamento.CrearEquipamento(sc);
+                break;
+              case 2:
+
+                break;
+              case 3:
+
+                break;
+              case 4:
+
+                break;
+              case 5:
+
+                break;
+              default:
+                break;
+            }
+
+          } while (opcionequipamento != 5);
+
           break;
 
         case 15:
+          int opcionpremios = 1;
+          do {
+            Clc.clc();
 
+            ViewPremios.star();
+            opcionpremios = sc.nextInt();
+            sc.nextLine();
+            switch (opcionpremios) {
+              case 1:
+
+                GestionPremios.CrearPremio(sc);
+                break;
+              case 2:
+
+                GestionPremios.CrearPremio(sc);
+                break;
+              case 3:
+
+                GestionPremios.CrearPremio(sc);
+                break;
+              case 4:
+
+                break;
+              default:
+                break;
+            }
+          } while (opcionpremios != 4);
+        case 16:
+        int opcionusurio=1;
+        do {
+          
+       
+ViewUsuarios.star();
+opcionusurio=sc.nextInt();
+sc.nextLine();
+switch (opcionusurio) {
+  case 1:
+    GestionUsuarios.CrearUsuarios(sc);
+    break;
+    case 2:
+    
+    break;
+    case 3:
+    
+    break;
+    case 4:
+    
+    break;
+    case 5:
+    
+    break;
+  default:
+    break;
+}
+
+} while (opcionusurio!= 5);
           break;
-
         case 19:
 
           break;

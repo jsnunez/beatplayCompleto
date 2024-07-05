@@ -13,13 +13,15 @@ public class GestionUsuarios {
         Usuario usuario = new Usuario();
         System.out.println("Ingresa nombre del USUARIO: ");
         String id = sc.nextLine();
-        if (controlador.arbitros.containsKey(id)) {
+        usuario.setId(id);
+        if (controlador.usuarios.containsKey(id)) {
             System.out.println("El código del Usuario ya existe. Por favor, intente con otro código.");
         } else {
             System.out.println("Ingrese su nombre: ");
             String nombre = sc.nextLine();
+            usuario.setNombre(nombre);
             System.out.println("Ingrese edad: ");
-            int edad = sc.nextInt();
+            int edad= sc.nextInt();
             usuario.setId(id);
             System.out.println("Email: ");
             String email = sc.nextLine();
@@ -27,13 +29,7 @@ public class GestionUsuarios {
             System.out.println("Password: ");
             String password = sc.nextLine();
             usuario.setPassword(password);
-            Enumeration<String> playerKeys = controlador.roles.keys();
-
-            while (playerKeys.hasMoreElements()) {
-                String playerKey = playerKeys.nextElement();
-                System.out.println("ID: " + playerKey + " Rol : " +
-                        controlador.roles.get(playerKey).getNombre());
-            }
+            ListarRoles();
             System.out.println("Seleccione id del rol a asignar:");
 
             String idRol = sc.nextLine();
@@ -42,20 +38,36 @@ public class GestionUsuarios {
            
             // entrenador
             if (usuario.getRol().getId().equals("003")) {
-                Entrenadores entrenador = new Entrenadores();
+                System.out.println("Ingrese apellido");
+                String apellido= sc.nextLine();
+                System.out.println("Ingrese nacionalidad");
+                String nacionalidad= sc.nextLine();
+                Entrenadores entrenador = new Entrenadores(id, nombre, apellido, edad, nacionalidad, idRol);
+            controlador.entrenadores.put(id, entrenador);
             }
             // arbitro
             if (usuario.getRol().getId().equals("004")) {
-                Arbitro arbitro = new Arbitro();
+                System.out.println("Ingrese apellido");
+                String apellido= sc.nextLine();
+                System.out.println("Ingrese nacionalidad");
+                String nacionalidad= sc.nextLine();
+                Arbitro arbitro = new Arbitro(idRol, nombre, apellido, edad, nacionalidad, idRol);
+                controlador.arbitros.put(id, arbitro);
             }
             // periodista
-            if (usuario.getRol().getId().equals("005")) {
+            // if (usuario.getRol().getId().equals("005")) {
+            //     System.out.println("Ingrese apellido");
+            //     String apellido= sc.nextLine();
+            //     System.out.println("Ingrese nacionalidad");
+            //     String nacionalidad= sc.nextLine();
+            //      arbitro = new Arbitro(idRol, nombre, apellido, edad, nacionalidad, idRol);
+            //     controlador.arbitros.put(id, arbitro);
 
-            }
+            // }
             // medico
-            if (usuario.getRol().getId().equals("005")) {
+            // if (usuario.getRol().getId().equals("005")) {
 
-            }
+            // }
 
         }
 
@@ -110,6 +122,14 @@ public class GestionUsuarios {
         }
     }
 
+    public static void ListarRoles() {
+    Enumeration<String> playerKeys = controlador.roles.keys();
+
+    while (playerKeys.hasMoreElements()) {
+        String playerKey = playerKeys.nextElement();
+        System.out.println("ID: " + playerKey + " Rol : " +
+                controlador.roles.get(playerKey).getNombre());
+    }}
     public static void ListarArbitros() {
 
         Enumeration<String> playerKeys = controlador.arbitros.keys();

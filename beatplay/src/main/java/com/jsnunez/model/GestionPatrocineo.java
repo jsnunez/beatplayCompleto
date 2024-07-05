@@ -24,7 +24,7 @@ public class GestionPatrocineo {
         String nombre = sc.nextLine();
    
         System.out.println("tipo.");
-        String ubicacion = sc.nextLine();
+        String tipo = sc.nextLine();
        
         System.out.println("monto.");
         int monto = sc.nextInt();
@@ -36,7 +36,7 @@ public class GestionPatrocineo {
         String fechafin = sc.nextLine();
         patrocinadores.setId(id);
         patrocinadores.setNombre(nombre);
-        patrocinadores.setTipo(id);
+        patrocinadores.setTipo(tipo);
         patrocinadores.setMonto(monto);
         
         patrocinadores.setFechaInicio(fechainicio);
@@ -109,7 +109,7 @@ public static void ListarPatrocinador() {
 
     while (playerKeys.hasMoreElements()) {
         String playerKey = playerKeys.nextElement();
-        System.out.println("Key: "+ playerKey + " Nombre del arbitro: "+
+        System.out.println("ID: "+ playerKey + " Nombre del patrocineo: "+
                     controlador.patrocinadores.get(playerKey).getNombre());
     }
 
