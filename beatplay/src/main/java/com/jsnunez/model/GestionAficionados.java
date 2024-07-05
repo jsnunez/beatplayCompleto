@@ -29,7 +29,7 @@ public class GestionAficionados {
                         goles++;
                     }
                 }
-                System.out.println("total de tarjetas: " + goles);
+                System.out.println("total de goles: " + goles);
                 Enumeration<String> tarjetas = controlador.goles.keys();
                 int tarjeta = 0;
                 while (tarjetas.hasMoreElements()) {

@@ -31,6 +31,7 @@ public class Main {
     GestionPremios.controlador = controlador;
     GestionPublicidad.controlador = controlador;
     GestionRelaciones.controlador = controlador;
+    GestionAficionados.controlador =controlador;
 
     com.jsnunez.model.DatosInicio.start();
     Clc.clc();
