@@ -75,7 +75,7 @@ public class Main {
 
                     break;
                   case 2:
-
+GestionVentas.start(sc);
                     break;
                   case 3:
 
