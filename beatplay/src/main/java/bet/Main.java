@@ -2,9 +2,41 @@ package bet;
 
 import java.util.Scanner;
 
-import com.jsnunez.View.*;
-
-import com.jsnunez.model.*;
+import com.jsnunez.View.Actor;
+import com.jsnunez.View.PaginaPrincipal;
+import com.jsnunez.View.ViewAficionados;
+import com.jsnunez.View.ViewArbitrosFirstOpcion;
+import com.jsnunez.View.ViewEquiposTecnicos;
+import com.jsnunez.View.ViewGestionNoticias;
+import com.jsnunez.View.ViewMedicosDelEquipos;
+import com.jsnunez.View.ViewPeriodistas;
+import com.jsnunez.View.inciarSesion;
+import com.jsnunez.model.Cerrarsesion;
+import com.jsnunez.model.Clc;
+import com.jsnunez.model.DatosInicio;
+import com.jsnunez.model.GEstionEstadio;
+import com.jsnunez.model.GestionAdministrador;
+import com.jsnunez.model.GestionAficionados;
+import com.jsnunez.model.GestionArbitro;
+import com.jsnunez.model.GestionCompletaEntrenadores;
+import com.jsnunez.model.GestionCompletaJugadores;
+import com.jsnunez.model.GestionEntrenadores;
+import com.jsnunez.model.GestionEquipamento;
+import com.jsnunez.model.GestionEquipo;
+import com.jsnunez.model.GestionJugador;
+import com.jsnunez.model.GestionMediosComunicacion;
+import com.jsnunez.model.GestionNoticias;
+import com.jsnunez.model.GestionPartido;
+import com.jsnunez.model.GestionPatrocineo;
+import com.jsnunez.model.GestionPremios;
+import com.jsnunez.model.GestionPublicidad;
+import com.jsnunez.model.GestionRelaciones;
+import com.jsnunez.model.GestionResultado;
+import com.jsnunez.model.GestionTransferencias;
+import com.jsnunez.model.GestionUsuarios;
+import com.jsnunez.model.Gestionincidente;
+import com.jsnunez.model.UsuarioInicioSesion;
+import com.jsnunez.model.VerificarInicioSeccion;
 
 //hola15615541
 public class Main {
@@ -31,7 +63,7 @@ public class Main {
     GestionPremios.controlador = controlador;
     GestionPublicidad.controlador = controlador;
     GestionRelaciones.controlador = controlador;
-    GestionAficionados.controlador =controlador;
+    GestionAficionados.controlador = controlador;
 
     com.jsnunez.model.DatosInicio.start();
     Clc.clc();
@@ -79,6 +111,8 @@ public class Main {
                     break;
                   case 3:
 
+                  
+
                     break;
                   case 4:
                     Cerrarsesion.start();
@@ -94,11 +128,10 @@ public class Main {
 
             if (tipoUsuario == "Periodista") {
 
-             
               int opcionPeriodista = 0;
               do {
 
-                opcionPeriodista =  ViewPeriodistas.start(sc);
+                opcionPeriodista = ViewPeriodistas.start(sc);
                 switch (opcionPeriodista) {
                   case 1:
 
@@ -107,14 +140,48 @@ public class Main {
                     break;
                   case 2:
 
+                    ViewGestionNoticias vgn = new ViewGestionNoticias();
+                    int opcionNoticias;
+                    GestionNoticias gn = new GestionNoticias();
+
+                    do {
+                      opcionNoticias = ViewGestionNoticias.start(sc);
+                      switch (opcionNoticias) {
+                        case 1:
+                          gn.CrearNoticia(sc);
+                          break;
+
+                        case 2:
+                          gn.VerNoticia();
+                          break;
+                        case 3:
+                          gn.PublicarNoticia(sc);
+                          break;
+
+                        case 4:
+                          gn.EditarNoticia(sc);
+
+                          break;
+                        case 5:
+                          gn.EliminarNoticia(sc);
+
+                          break;
+                        case 6:
+
+                          break;
+                        default:
+                          System.out.println("seleccione una opcion valida");
+                      }
+                    } while (opcionNoticias != 6);
+
                     break;
                   case 3:
 
                     break;
                   case 4:
-                    
+
                     break;
-                    case 5:
+                  case 5:
                     Cerrarsesion.start();
                     Clc.clc();
                     break;
@@ -127,22 +194,25 @@ public class Main {
 
             if (tipoUsuario == "Equipo Técnico") {
 
-              
               int opcionPeriodista = 0;
               do {
 
-                opcionPeriodista =  ViewEquiposTecnicos.start(sc);
+                opcionPeriodista = ViewEquiposTecnicos.start(sc);
                 switch (opcionPeriodista) {
                   case 1:
 
-                    GestionAficionados.visualizacion(sc);
-
-                    break;
+                  GestionCompletaJugadores.star(sc);
+                  break;
                   case 2:
 
+                  
+
                     break;
+
                   case 3:
 
+                  GestionCompletaEntrenadores.star(sc);
+                  
                     break;
                   case 12:
                     Cerrarsesion.start();
@@ -159,11 +229,10 @@ public class Main {
 
             if (tipoUsuario == "Árbitro") {
 
-            
               int opcionArbitro = 0;
               do {
 
-                opcionArbitro =    ViewArbitrosFirstOpcion.star(sc);
+                opcionArbitro = ViewArbitrosFirstOpcion.star(sc);
                 switch (opcionArbitro) {
                   case 1:
 
@@ -174,10 +243,10 @@ public class Main {
 
                     break;
                   case 3:
-                  Cerrarsesion.start();
-                  Clc.clc();
+                    Cerrarsesion.start();
+                    Clc.clc();
                     break;
-                
+
                   default:
                     break;
 
@@ -188,11 +257,10 @@ public class Main {
 
             if (tipoUsuario == "Médico del Equipo") {
 
-            
               int opcionMedico = 0;
               do {
 
-                opcionMedico =     ViewMedicosDelEquipos.star(sc);
+                opcionMedico = ViewMedicosDelEquipos.star(sc);
                 switch (opcionMedico) {
                   case 1:
 
@@ -203,10 +271,10 @@ public class Main {
 
                     break;
                   case 3:
-                  Cerrarsesion.start();
-                  Clc.clc();
+                    Cerrarsesion.start();
+                    Clc.clc();
                     break;
-                
+
                   default:
                     break;
 
