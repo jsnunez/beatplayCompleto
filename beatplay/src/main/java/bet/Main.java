@@ -34,6 +34,7 @@ import com.jsnunez.model.GestionRelaciones;
 import com.jsnunez.model.GestionResultado;
 import com.jsnunez.model.GestionTransferencias;
 import com.jsnunez.model.GestionUsuarios;
+import com.jsnunez.model.GestionVentas;
 import com.jsnunez.model.Gestionincidente;
 import com.jsnunez.model.UsuarioInicioSesion;
 import com.jsnunez.model.VerificarInicioSeccion;

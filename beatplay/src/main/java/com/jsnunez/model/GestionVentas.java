@@ -30,7 +30,7 @@ String precio= sc.nextLine();
 
 
 
-Entrada entrada = new Entrada(idpartido, , null, precio, cantidad, cantidad, ubicacion);
+// Entrada entrada = new Entrada(idpartido, , null, precio, cantidad, cantidad, ubicacion);
 
     }
 
